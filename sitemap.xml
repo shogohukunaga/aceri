@@ -2,7 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shogohukunaga.github.io/aceri/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://shogohukunaga.github.io/aceri/items.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shogohukunaga.github.io/aceri/lesson.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shogohukunaga.github.io/aceri/news.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shogohukunaga.github.io/aceri/shop.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shogohukunaga.github.io/aceri/story.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>

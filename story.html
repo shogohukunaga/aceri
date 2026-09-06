@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>焼菓子屋 アチェリのおやつ｜愛知県安城市・月暈の物語から生まれるクッキー缶</title>
-<meta name="description" content="愛知県安城市の焼菓子屋「アチェリのおやつ」。オリジナルストーリー「月暈（つきがさ）の物語」から生まれる、見て楽しく食べておいしいクッキー缶と焼菓子を製造・販売しています。毎月第1・3水曜日と土曜日の13:00〜17:00に営業。">
-<link rel="canonical" href="https://shogohukunaga.github.io/aceri/">
+<title>ご著書のご紹介『月の輪のひみつ』｜焼菓子屋 アチェリのおやつ</title>
+<meta name="description" content="焼菓子屋「アチェリのおやつ」のご著書『月の輪のひみつ』のご紹介。月暈（つきがさ／ハロー）が現れるときにだけ開く扉と、異世界ハローの国の物語。「アチェリとしあわせキノコの物語」「しあわせキノコと水玉じゃくしの物語」も掲載しています。">
+<link rel="canonical" href="https://shogohukunaga.github.io/aceri/story.html">
 <link rel="icon" href="image/logo-square.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="焼菓子屋 アチェリのおやつ｜愛知県安城市・月暈の物語から生まれるクッキー缶">
-<meta property="og:description" content="オリジナルストーリー「月暈の物語」から生まれる、見て楽しく食べておいしい焼菓子。愛知県安城市。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ご著書のご紹介『月の輪のひみつ』｜焼菓子屋 アチェリのおやつ">
+<meta property="og:description" content="ご著書『月の輪のひみつ』と、月暈（ハロー）の物語。焼菓子のもとになった、ハローの国のお話です。">
 <meta property="og:image" content="https://shogohukunaga.github.io/aceri/image/logo-square.png">
-<meta property="og:url" content="https://shogohukunaga.github.io/aceri/">
+<meta property="og:url" content="https://shogohukunaga.github.io/aceri/story.html">
 <meta name="twitter:card" content="summary_large_image">
 
 <style>
@@ -915,6 +915,380 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
   /* 広がる輪は装飾なので、動きを減らす設定では出さない（静止した輪3本は残る） */
   #story .halo .rp{display:none;}
 }
+
+/* ============================================================
+   下層ページ共通（5ページで同一）
+   トップの見た目（淡いピンク＋森）をそのまま引き継ぐ。
+   ============================================================ */
+
+/* ----- ページ見出し帯（背景写真必須・ベタ塗り禁止） ----- */
+.phead{position:relative;display:flex;align-items:flex-end;justify-content:center;
+  height:clamp(272px,31vw,420px);overflow:hidden;background:var(--forest);}
+.phead .ph-bg{position:absolute;inset:-7% 0;background-size:cover;background-position:50% 50%;
+  will-change:transform;}
+.phead .ph-veil{position:absolute;inset:0;
+  background:linear-gradient(rgba(38,49,31,.3) 0%,rgba(38,49,31,.56) 58%,rgba(38,49,31,.8) 100%);}
+.phead .ph-in{position:relative;z-index:3;width:var(--container);max-width:var(--container-max);
+  text-align:center;color:var(--text-on-dark);padding-bottom:clamp(30px,4vw,60px);}
+/* 英字ラベルは小さく細いので、--pink-3 では写真の明るい所でコントラストが足りない */
+.phead .en{color:var(--pink-2);text-shadow:0 1px 10px rgba(20,28,16,.6);}
+.phead h1{font-size:clamp(21px,2.9vw,38px);letter-spacing:.18em;line-height:1.95;
+  text-shadow:0 2px 18px rgba(20,28,16,.55);}
+.phead .ph-lead{margin-top:14px;font-size:13px;line-height:2.1;letter-spacing:.1em;color:#E7EADF;
+  text-shadow:0 1px 12px rgba(20,28,16,.6);}
+/* 見出しの登場は CSS アニメーションで完結させる（JSが動かない環境でも必ず表示される） */
+.js .phead .ph-in > *{opacity:0;
+  animation:kf-phead 1.2s var(--ease-inview) calc(.15s + var(--n,0) * .13s) forwards;}
+@keyframes kf-phead{
+  from{opacity:0;transform:translate3d(0,26px,0);}
+  to{opacity:1;transform:translate3d(0,0,0);}}
+
+/* 下層の各セクションは、浮遊するキャラが横に溢れないよう切る */
+main .block{overflow:hidden;}
+/* 地色の切り替え（森 → 淡ピンク → やや濃いピンク） */
+.bg-a{background:var(--pink-1);}
+.bg-b{background:var(--pink-2);}
+.bg-c{background:linear-gradient(var(--pink-1) 0%,var(--pink-2) 55%,var(--pink-1) 100%);}
+
+/* ----- 本文まわり ----- */
+.prose{font-size:15px;line-height:2.3;}
+.prose p+p{margin-top:1.5em;}
+.prose .lead-lg{font-family:var(--font-serif);font-size:clamp(16px,1.9vw,25px);
+  line-height:2.15;letter-spacing:.13em;}
+.center{text-align:center;}
+.h3{font-family:var(--font-serif);font-weight:400;font-size:clamp(16px,1.75vw,24px);
+  letter-spacing:.13em;line-height:1.95;}
+.h4{font-family:var(--font-serif);font-weight:400;font-size:clamp(14px,1.3vw,18px);
+  letter-spacing:.12em;line-height:1.9;}
+.note{font-size:12.5px;line-height:2.05;color:var(--text-sub);}
+.dark .note{color:var(--text-sub-on-dark);}
+.mt-s{margin-top:14px;} .mt-m{margin-top:clamp(22px,2.6vw,38px);}
+.mt-l{margin-top:clamp(38px,4.6vw,72px);}
+
+/* ----- パネル（淡地／濃地で自動的に反転） ----- */
+.panel{background:var(--pink-0);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(20px,2.4vw,36px);position:relative;z-index:4;}
+.dark .panel{background:rgba(247,239,236,.07);border-color:var(--line-on-dark);}
+
+/* ----- 未確定事項の枠（クライアント記入用） ----- */
+.todo{border:1px dashed var(--pink-4);border-radius:14px;background:var(--pink-2);
+  padding:clamp(15px,1.9vw,25px);font-size:13px;line-height:2.05;color:#7A5348;
+  position:relative;z-index:4;}
+.dark .todo{background:rgba(247,239,236,.06);border-color:var(--line-on-dark);color:var(--text-sub-on-dark);}
+.todo .ttl{display:flex;align-items:center;gap:9px;margin-bottom:6px;
+  font-family:var(--font-serif);font-size:13.5px;letter-spacing:.1em;color:#8A5F52;}
+.dark .todo .ttl{color:var(--pink-3);}
+.todo ul{margin-top:6px;}
+.todo li{position:relative;padding-left:1.1em;}
+.todo li::before{content:"・";position:absolute;left:0;}
+
+/* ----- 定義リスト（横並び・SPで縦） ----- */
+.deflist.wide .row{grid-template-columns:8.5em 1fr;}
+
+/* ----- 番号つきの手順 ----- */
+.steps{counter-reset:st;display:grid;gap:14px;position:relative;z-index:4;}
+.steps li{counter-increment:st;display:grid;grid-template-columns:auto 1fr;gap:15px;
+  align-items:start;background:var(--pink-0);border:1px solid var(--line);
+  border-radius:14px;padding:15px 18px;font-size:13.5px;line-height:2;}
+.steps li::before{content:counter(st);display:flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;background:var(--pink-4);color:#fff;
+  font-family:var(--font-serif);font-size:12.5px;margin-top:5px;}
+
+/* ----- 2カラム（PCのみ） ----- */
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.2vw,56px);
+  align-items:start;position:relative;z-index:4;}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,40px);
+  position:relative;z-index:4;}
+
+/* ----- 外部リンクのカード（ネットショップ等） ----- */
+.linkcards{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,30px);
+  position:relative;z-index:4;}
+.linkcard{display:block;background:var(--pink-0);border:1px solid var(--line);border-radius:18px;
+  overflow:hidden;transition:transform .6s var(--ease-out-expo),box-shadow .6s var(--ease-out-expo);}
+.linkcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(206,130,121,.16);}
+.linkcard img{width:100%;}
+.linkcard .tx{padding:16px 18px 20px;text-align:center;}
+.linkcard .tx b{display:block;font-family:var(--font-serif);font-weight:400;
+  font-size:15px;letter-spacing:.1em;}
+.linkcard .tx span{display:block;margin-top:6px;font-size:12px;color:var(--text-sub);}
+
+/* ----- FAQ ----- */
+.faq{position:relative;z-index:4;border-top:1px solid var(--line);}
+.faq details{border-bottom:1px solid var(--line);}
+.faq summary{display:flex;align-items:flex-start;gap:14px;padding:20px 40px 20px 0;
+  position:relative;cursor:pointer;list-style:none;
+  font-family:var(--font-serif);font-size:clamp(14px,1.25vw,17px);letter-spacing:.09em;line-height:1.9;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::before{content:"Q";flex:none;font-family:var(--font-serif);
+  color:var(--pink-5);font-size:14px;line-height:1.9;}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
+  margin-top:-7px;border-right:1px solid var(--pink-4);border-bottom:1px solid var(--pink-4);
+  transform:rotate(45deg);transition:transform .5s var(--ease-out-expo);}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:-2px;}
+.faq .a{display:flex;gap:14px;padding:0 0 22px;font-size:13.5px;line-height:2.15;color:var(--text-sub);}
+.faq .a::before{content:"A";flex:none;font-family:var(--font-serif);color:var(--pink-4);font-size:14px;}
+
+/* ----- フォーム ----- */
+.form{position:relative;z-index:4;display:grid;gap:clamp(16px,1.8vw,24px);}
+/* ラベル列は「お問い合わせ内容」＋「必須」バッジが1行に収まる幅。
+   9.5em だとバッジが2行目に落ちる（実測）。 */
+.form .fr{display:grid;grid-template-columns:11em 1fr;gap:8px 20px;align-items:start;}
+.form label.lb{padding-top:13px;font-size:13px;letter-spacing:.08em;color:var(--text-sub);
+  display:flex;align-items:center;gap:8px;}
+.form .must{background:var(--pink-4);color:#fff;font-size:10px;border-radius:3px;
+  padding:1px 6px;letter-spacing:.04em;}
+.form input,.form textarea{width:100%;font:inherit;font-size:14px;color:var(--text);
+  background:var(--pink-0);border:1px solid var(--line);border-radius:11px;
+  padding:12px 14px;transition:border-color .4s var(--ease-out-expo);}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--pink-4);}
+.form textarea{min-height:150px;line-height:1.95;resize:vertical;}
+.form .submit{display:flex;justify-content:center;}
+.form .submit .btn{min-width:min(320px,90%);}
+
+/* ----- 記事リスト（お知らせ） ----- */
+.posts{position:relative;z-index:4;border-top:1px solid var(--line);}
+.post{display:grid;grid-template-columns:7.5em 9em 1fr;gap:6px 18px;align-items:baseline;
+  padding:20px 0;border-bottom:1px solid var(--line);}
+.post time{font-family:var(--font-serif);font-size:13px;letter-spacing:.08em;color:var(--text-sub);}
+.post .cat{justify-self:start;font-size:11px;letter-spacing:.08em;padding:3px 12px;
+  border-radius:999px;border:1px solid var(--pink-4);color:var(--pink-5);white-space:nowrap;}
+.post .ttl{font-family:var(--font-serif);font-size:15px;letter-spacing:.08em;line-height:1.9;}
+
+/* ----- 営業日カレンダー ----- */
+.cal{position:relative;z-index:4;}
+.calwrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.2vw,56px);}
+.calm .ym{font-family:var(--font-serif);font-size:clamp(16px,1.8vw,23px);letter-spacing:.12em;
+  text-align:center;margin-bottom:clamp(12px,1.5vw,20px);}
+.cal table{width:100%;border-collapse:collapse;table-layout:fixed;}
+.cal th{font-family:var(--font-serif);font-weight:400;font-size:11.5px;letter-spacing:.1em;
+  color:var(--text-sub);padding-bottom:9px;}
+.cal th.sun{color:#C97A72;} .cal th.sat{color:#7E93A8;}
+.cal td{padding:3px;}
+.cal .d{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  aspect-ratio:1/.86;border-radius:11px;font-size:13.5px;line-height:1.4;
+  border:1px solid transparent;color:var(--text-sub);}
+.cal .d.blank{visibility:hidden;}
+.cal .d.open{background:var(--pink-2);border-color:var(--pink-4);color:#8A5F52;font-weight:600;}
+.cal .d.today{outline:2px solid var(--moss-3);outline-offset:1px;}
+.cal-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;
+  margin-top:16px;font-size:12px;color:var(--text-sub);}
+.cal-legend i{display:inline-block;width:14px;height:14px;border-radius:4px;
+  background:var(--pink-2);border:1px solid var(--pink-4);vertical-align:-2px;margin-right:7px;}
+.cal noscript{display:block;font-size:13px;line-height:2;}
+
+/* ----- 大きく見せる住所・営業時間（スマホで最初に目に入る場所） ----- */
+.hero-info{position:relative;z-index:4;display:grid;grid-template-columns:1.05fr 1fr;
+  gap:clamp(24px,3vw,52px);align-items:center;}
+.hero-info .addr-lg{font-family:var(--font-serif);font-size:clamp(17px,2.05vw,27px);
+  line-height:1.9;letter-spacing:.1em;}
+.hero-info .zip{display:block;font-size:12.5px;letter-spacing:.14em;color:var(--text-sub);
+  font-family:var(--font-round);margin-bottom:4px;}
+.hero-info .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(20px,2.4vw,32px);}
+.hero-info .map-embed{aspect-ratio:1/1;}
+
+/* ----- レスポンシブ ----- */
+@media (max-width:1024px){
+  .cols3{grid-template-columns:1fr;}
+}
+@media (max-width:767px){
+  .phead{height:clamp(230px,54vw,300px);}
+  /* SPの敷きの濃さは body.night.sub 側（共通CSS）で指定している。
+     ここに森色で書くと夜空版に必ず負けるため、置かない。 */
+  .cols2,.hero-info{grid-template-columns:1fr;}
+  .linkcards{grid-template-columns:1fr;}
+  .post{grid-template-columns:1fr;gap:5px;}
+  .post .cat{margin-top:2px;}
+  .form .fr{grid-template-columns:1fr;}
+  .form label.lb{padding-top:0;}
+  /* SPは横幅が足りないので、パネルの内側も詰める（20px→15px）。
+     本文がそのぶん左右に10px広がる。 */
+  .panel{padding:15px;}
+  .steps li{grid-template-columns:auto 1fr;gap:12px;padding:13px 15px;font-size:13px;}
+  .cal .d{font-size:12px;border-radius:9px;}
+  .calwrap{grid-template-columns:1fr;gap:34px;}
+  .deflist .row,.deflist.wide .row{grid-template-columns:6em 1fr;gap:10px;font-size:13px;}
+}
+</style>
+
+<style>
+/* ---- ご著書 ---- */
+.bookintro{display:grid;grid-template-columns:minmax(0,.78fr) 1fr;gap:clamp(28px,3.6vw,64px);
+  align-items:center;position:relative;z-index:4;}
+/* 書影はネットショップの商品写真（縦2:3の俯瞰カット）。3:4の枠に
+   object-fit:cover で入れ、本が中央に来るよう object-position を少し上げる。 */
+.bookcover{position:relative;margin:0;border-radius:14px;overflow:hidden;background:var(--pink-2);
+  aspect-ratio:3/4;box-shadow:0 12px 32px rgba(94,64,44,.16);}
+.bookcover img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;}
+.booktitle{font-size:clamp(21px,2.7vw,38px);letter-spacing:.14em;line-height:1.8;}
+.booktitle .kagi{color:var(--pink-5);}
+
+/* ---- 月暈 ---- */
+#halo .halo-fig{width:min(74%,320px);margin:0 auto clamp(22px,2.6vw,38px);}
+#halo .halo-fig svg{width:100%;height:auto;display:block;overflow:visible;}
+#halo .halo-fig circle{fill:none;stroke:rgba(247,239,236,.6);}
+/* ★ 輪は12時から描き始めたいので -90度まわす。まわす指定は **CSSだけ** に置く。
+   SVG属性の transform="rotate(-90 200 200)" と併用すると、属性が持つ中心と
+   CSSの transform-origin（SVGの既定は transform-box:view-box ＋ 50% 50%
+   ＝ 200px 200px）が二重にかかり、円の中心が (200,200) → (200,600) へ
+   ＝ 400ユーザー単位（実測320px）下へずれて見出しに重なる。 */
+#halo .halo-fig circle{transform-origin:50% 50%;}
+#halo .halo-fig .r1,
+#halo .halo-fig .r2,
+#halo .halo-fig .r3{transform:rotate(-90deg);}
+#halo .halo-fig .moon{fill:#FBF3E8;stroke:none;
+  /* 輪が広がるほど月が強く光る */
+  filter:drop-shadow(0 0 calc(10px + var(--p,0) * 26px)
+    rgba(255,244,224,calc(.4 + var(--p,0) * .45)));}
+/* 輪はスクロール量（--p、sub.js が渡す）に合わせて12時から時計回りに描く。
+   内側から順に、少し重なりながら現れる。周長は 2πr（r=110/142/176）。 */
+#halo .halo-fig .r1{stroke-dasharray:692;
+  stroke-dashoffset:calc(692 * (1 - clamp(0, (var(--p,0) - .04) / .38, 1)));}
+#halo .halo-fig .r2{stroke-dasharray:893;
+  stroke-dashoffset:calc(893 * (1 - clamp(0, (var(--p,0) - .24) / .42, 1)));}
+#halo .halo-fig .r3{stroke-dasharray:1106;
+  stroke-dashoffset:calc(1106 * (1 - clamp(0, (var(--p,0) - .46) / .46, 1)));}
+/* JSが動かない環境と、動きを減らす設定では描き切った状態で見せる */
+html:not(.js) #halo .halo-fig .r1,
+html:not(.js) #halo .halo-fig .r2,
+html:not(.js) #halo .halo-fig .r3{stroke-dashoffset:0;}
+@media (prefers-reduced-motion:reduce){
+  #halo .halo-fig .r1,#halo .halo-fig .r2,#halo .halo-fig .r3{stroke-dashoffset:0;}
+}
+
+/* ---- 物語 ---- */
+.taletitle{display:flex;flex-direction:column;align-items:center;text-align:center;
+  margin-bottom:clamp(30px,3.6vw,58px);position:relative;z-index:4;}
+.taletitle img{width:clamp(86px,9vw,142px);margin-bottom:16px;}
+.taletitle .en{color:var(--pink-3);}
+.taletitle h2{font-size:clamp(18px,2.2vw,30px);letter-spacing:.15em;line-height:1.85;}
+.taletitle .meta{margin-top:12px;font-size:12px;letter-spacing:.1em;color:var(--text-sub-on-dark);}
+
+/* ---- 浮遊するキャラ ---- */
+.st-kino1{width:clamp(64px,7.6vw,130px);left:1%;top:12%;}
+.st-drgn{width:clamp(84px,10vw,178px);right:-1%;bottom:8%;--fo:.85;}
+.st-drop1{width:clamp(26px,3vw,52px);right:8%;top:14%;}
+.st-drop2{width:clamp(24px,2.8vw,46px);left:7%;bottom:14%;--fo:.5;}
+.st-whale{width:clamp(104px,13vw,220px);right:-3%;top:8%;--fo:.55;}
+.st-kino2{width:clamp(58px,6.8vw,116px);left:-1%;bottom:10%;--fo:.5;}
+.st-drop3{width:clamp(26px,3vw,50px);right:6%;bottom:16%;--fo:.5;}
+
+/* ---- 絵本（ページがめくれる本） -----------------------------------------
+   参考: kids-familydc.xyz の .book-wrap。チェックボックス＋label で紙を
+   rotateY(0 -> -180deg) させるだけの仕掛けで、JSは使わない。
+   本の絵は image/story-book.png（実寸 1000x739・見開き）。
+   ページ画像は本の紙の上に % 指定で置く。% は PNG を実測して決めた:
+     紙の内側 … 左ページ x50-475 / 右ページ x525-950、y70-623（1000x739基準）
+   下のスロットはこの内側に収まる（左 x80-460 / 右 x540-920、y85-584）。
+   ★ padding の % は「幅」基準になり縦がずれるので、内側は inset(%) で置く。 */
+.bookflip{position:relative;z-index:4;width:min(100%,880px);margin-inline:auto;}
+.bookflip .bk-sw{position:absolute;width:1px;height:1px;opacity:0;}
+.bk-in{position:relative;aspect-ratio:1000/739;perspective:clamp(800px,120vw,1900px);}
+.bk-frame{position:absolute;inset:0;width:100%;height:100%;display:block;}
+
+/* 紙は本のちょうど半分。回る軸は背表紙（中央）側 */
+.bk-leaf{position:absolute;top:0;bottom:0;width:50%;margin:0;backface-visibility:hidden;}
+.bk-leaf.l{right:50%;transform-origin:right center;}
+.bk-leaf.r{left:50%;transform-origin:left center;}
+.bk-leaf.base.l{z-index:1;}
+.bk-leaf.base.r{z-index:2;}
+/* ★ めくる紙2枚（sh1=外側 / sh2=内側）の重なり。
+   face は右ページ側、back は左ページ側にしか出ない（backface-visibility:hidden）
+   ので、左右で別々に順番を決められる＝状態によらず固定値でよい。
+     右（閉じている側）… sh1.face(7) が sh2.face(5) の上   ＝外側の紙が手前
+     左（めくった側）  … sh2.back(6) が sh1.back(4) の上   ＝あとにめくった紙が上
+   本物の本と同じ重なりになる。 */
+.bk-leaf.turn.sh1.face{z-index:7;}
+.bk-leaf.turn.sh2.face{z-index:5;}
+.bk-leaf.turn.sh2.back{z-index:6;}
+.bk-leaf.turn.sh1.back{z-index:4;}
+/* めくる紙は自分で紙（本の絵の同じ半分）を持つ。下の紙を隠すため。
+   background-size:200% 100% で本の絵を原寸に戻し、position で左右を選ぶ。 */
+.bk-leaf.turn{background:url('image/story-book.png') no-repeat;background-size:200% 100%;
+  transition:transform 1.1s var(--ease-kv);}
+.bk-leaf.turn.l{background-position:0 0;}
+.bk-leaf.turn.r{background-position:100% 0;}
+.bk-leaf.turn.face{z-index:5;transform:rotateY(0deg);cursor:pointer;}
+.bk-leaf.turn.back{z-index:4;transform:rotateY(180deg);pointer-events:none;}
+/* どの見開きを開いているかで、めくれている紙が決まる。
+   2見開き目 … 1枚目だけめくれている / 3見開き目 … 2枚ともめくれている */
+.bk-sw.sp2:checked ~ .bk-in .bk-leaf.turn.sh1.face,
+.bk-sw.sp3:checked ~ .bk-in .bk-leaf.turn.sh1.face,
+.bk-sw.sp3:checked ~ .bk-in .bk-leaf.turn.sh2.face{transform:rotateY(-180deg);pointer-events:none;}
+.bk-sw.sp2:checked ~ .bk-in .bk-leaf.turn.sh1.back,
+.bk-sw.sp3:checked ~ .bk-in .bk-leaf.turn.sh1.back,
+.bk-sw.sp3:checked ~ .bk-in .bk-leaf.turn.sh2.back{transform:rotateY(0deg);pointer-events:auto;cursor:pointer;}
+.bk-sw:focus-visible ~ .bk-in{outline:2px solid var(--pink-5);outline-offset:7px;border-radius:10px;}
+
+/* 紙の上に載るページ画像 */
+.bk-page{position:absolute;top:11.5%;bottom:23%;display:block;}
+.bk-leaf.l .bk-page{left:16%;right:8%;}
+.bk-leaf.r .bk-page{left:8%;right:16%;}
+.bk-page img{width:100%;height:100%;object-fit:contain;display:block;
+  filter:drop-shadow(0 2px 7px rgba(94,64,44,.18));}
+
+/* ノド下の小さなページ番号。紙の内側（y623px＝84.3%）より上に収める */
+.bk-cap{position:absolute;left:8%;right:8%;bottom:17.5%;
+  display:flex;align-items:center;justify-content:center;gap:.9em;white-space:nowrap;
+  font-family:var(--font-round);font-size:clamp(9.5px,1.15vw,12.5px);line-height:1.2;
+  letter-spacing:.1em;color:#8A6A50;}
+.bk-hint{display:inline-flex;align-items:center;gap:.45em;color:var(--pink-5);}
+.bk-hint::after{content:"";width:.46em;height:.46em;
+  border-top:1.4px solid currentColor;border-right:1.4px solid currentColor;
+  transform:rotate(45deg);}
+.bk-leaf.turn.back .bk-hint{flex-direction:row-reverse;}
+.bk-leaf.turn.back .bk-hint::after{transform:rotate(-135deg);}
+
+/* ---- SP: 本を半分だけ見せて、1ページずつめくる -----------------------------
+   スマホは見開きだとページ画像が114pxまで縮んで読めない。そこで本を2倍に広げ、
+   .bookflip を「窓」にして半分（＝1ページ）だけ出す。
+   step は 0 から data-pages-1 まで。見開き = step/2、右ページ = step が奇数:
+     step 0,1 … 1見開き目の 左 / 右   step 2,3 … 2見開き目の 左 / 右
+     step 4,5 … 3見開き目の 左 / 右
+   偶数→奇数では窓のパン（translateX）だけ、奇数→偶数では紙のめくり
+   （ラジオの切替）と窓のパンが同時に走る。
+   ★ JSが動かないと .bk-one が付かないので、これまでどおり見開きで出る。 */
+.bk-ui{display:none;}
+@media (max-width:767px){
+  .bookflip.bk-one{overflow:hidden;}
+  .bookflip.bk-one .bk-in{width:200%;transition:transform 1.1s var(--ease-kv);}
+  .bookflip.bk-one.half-r .bk-in{transform:translateX(-50%);}
+  /* 窓の中はタップの左右で送るので、紙そのものは押させない */
+  .bookflip.bk-one .bk-leaf.turn{pointer-events:none;}
+  .bookflip.bk-one .bk-hint{display:none;}
+  /* 本が2倍になったぶん、紙の上の文字はPCと同じ比率に戻す */
+  .bookflip.bk-one .bk-page{bottom:23%;}
+  .bookflip.bk-one .bk-cap{font-size:12px;letter-spacing:.1em;gap:.9em;}
+
+  .bookflip.bk-one .bk-ui{display:block;}
+  .bk-arw{position:absolute;top:42%;z-index:9;transform:translateY(-50%);
+    width:44px;height:44px;border-radius:50%;padding:0;cursor:pointer;
+    display:grid;place-items:center;
+    background:rgba(255,255,255,.84);border:1px solid var(--line);
+    box-shadow:0 4px 14px rgba(60,40,26,.22);
+    transition:opacity .3s var(--ease-out-expo);}
+  .bk-arw.prev{left:7px;}
+  .bk-arw.next{right:7px;}
+  .bk-arw i{display:block;width:11px;height:11px;
+    border-top:2px solid var(--pink-5);border-right:2px solid var(--pink-5);}
+  .bk-arw.prev i{transform:translateX(2px) rotate(-135deg);}
+  .bk-arw.next i{transform:translateX(-2px) rotate(45deg);}
+  .bk-arw:disabled{opacity:.24;cursor:default;}
+  .bk-cnt{position:absolute;right:9%;bottom:16.5%;z-index:9;
+    font-family:var(--font-round);font-size:12px;letter-spacing:.08em;color:#8A6A50;}
+}
+
+@media (max-width:767px){
+  .bookintro{grid-template-columns:1fr;gap:24px;}
+  .bookcover{max-width:280px;margin-inline:auto;}
+  .st-drgn{width:76px;right:-1%;bottom:4%;}
+  .st-kino1{width:56px;left:-1%;top:8%;}
+  .st-whale{width:104px;right:-2%;top:5%;}
+  .st-drop1,.st-drop2,.st-drop3,.st-kino2{display:none;}
+  /* SPは本が小さくなるので、紙の上の文字も詰める */
+  /* SPは文字が下限(9.5px)で止まるぶん帯が相対的に太くなるので、ページ画像を上げる */
+  .bk-page{bottom:25%;}
+  .bk-cap{gap:.6em;letter-spacing:.04em;}
+}
 </style>
 
 <script>document.documentElement.className+=' js';</script>
@@ -922,56 +1296,39 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"Bakery",
-  "@id":"#aceri",
-  "name":"アチェリのおやつ",
-  "alternateName":"aceri no oyatsu",
-  "description":"オリジナルストーリー「月暈の物語」から生まれる焼菓子・クッキー缶の製造・販売。甘味は主にメープルシュガー、小麦粉は愛知県産「きぬあかり」を使用。",
-  "url":"https://shogohukunaga.github.io/aceri/",
-  "image":"https://shogohukunaga.github.io/aceri/image/logo-square.png",
-  "foundingDate":"2021-09-01",
-  "address":{
-    "@type":"PostalAddress",
-    "postalCode":"446-0045",
-    "addressRegion":"愛知県",
-    "addressLocality":"安城市",
-    "streetAddress":"横山町石ナ曽根181-3",
-    "addressCountry":"JP"
-  },
-  "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Wednesday","https://schema.org/Saturday"],"opens":"13:00","closes":"17:00","description":"毎月第1・第3の水曜日および土曜日のみ営業"}
-  ],
-  "sameAs":[
-    "https://www.instagram.com/aceri_no_oyatsu",
-    "https://lin.ee/QGTHKM1",
-    "https://halotales.stores.jp/",
-    "https://halotales.thebase.in/"
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"ホーム","item":"https://shogohukunaga.github.io/aceri/"},
+    {"@type":"ListItem","position":2,"name":"ご著書のご紹介","item":"https://shogohukunaga.github.io/aceri/story.html"}
   ]
 }
 </script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"ItemList",
-  "name":"アチェリのおやつ 人気の焼菓子",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"しあわせキノコのクッキー(ミニ)","description":"当店1番の人気クッキー！実寸大よりもミニサイズなので、3枚入り。","image":"https://shogohukunaga.github.io/aceri/image/item-kinoko-mini.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"280","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"フルムーン(満月)のクッキー","description":"HALOの世界のフルムーン(満月)をモチーフにした紅茶味のクッキー。","image":"https://shogohukunaga.github.io/aceri/image/item-fullmoon.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"360","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"みんなの願い星のクッキー","description":"HALOの物語に登場する、願い星のクッキー。味は色々、願いも色々。","image":"https://shogohukunaga.github.io/aceri/image/item-wishstar.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"360","priceCurrency":"JPY"}}}
-  ]
+  "@type":"Book",
+  "name":"月の輪のひみつ",
+  "author":{"@type":"Person","name":"菓月ももこ"},
+  "illustrator":{"@type":"Person","name":"カミオリホ"},
+  "publisher":{"@type":"Organization","name":"文芸社"},
+  "numberOfPages":140,
+  "inLanguage":"ja",
+  "image":"https://shogohukunaga.github.io/aceri/image/book-cover.jpg",
+  "url":"https://shogohukunaga.github.io/aceri/story.html#book",
+  "offers":{
+    "@type":"Offer",
+    "price":"1320",
+    "priceCurrency":"JPY",
+    "url":"https://halotales.stores.jp/items/6a0180d34961f597f359b6cf"
+  }
 }
 </script>
 </head>
-<body id="top" class="night">
+<body id="top" class="night sub">
 
-<!-- ===== ページ全体の地になる夜空（KVと同じ原画・position:fixed で敷きっぱなし） ===== -->
+<!-- ===== ページ全体の地になる夜空（TOPと同じ原画・position:fixed で敷きっぱなし） ===== -->
 <div class="nightbg" aria-hidden="true"></div>
 <div class="pagedust" id="pagedust" aria-hidden="true"></div>
-
-<!-- ===== オープニング ===== -->
-<div id="op" aria-hidden="true">
-  <span class="opLogo"><img src="image/logo-square.png" alt="" width="626" height="625"></span>
-</div>
 
 <!-- ===== ヘッダー ===== -->
 <header class="site" id="header">
@@ -981,9 +1338,9 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
     </a>
     <nav class="main" aria-label="メインナビゲーション">
       <ul>
-        <li><a class="active" href="index.html">ホーム</a></li>
+        <li><a href="index.html">ホーム</a></li>
         <li><a href="items.html">焼菓子</a></li>
-        <li><a href="story.html">ご著書</a></li>
+        <li><a href="story.html" class="active">ご著書</a></li>
         <li><a href="shop.html">ご購入</a></li>
         <li><a href="lesson.html">クッキー教室</a></li>
         <li><a href="news.html">お知らせ</a></li>
@@ -1028,278 +1385,228 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
   </div>
 </div>
 
-<!-- ============================================================
-     KV：森のレイヤーをスクロールでパララックス
-     ============================================================ -->
-<div class="mv" id="mv">
-  <div class="mv-scene">
-    <span class="mv-art" aria-hidden="true"></span>
+<!-- ===== ページ見出し帯 ===== -->
+<div class="phead">
+  <span class="ph-bg" style="background-image:url('image/bg-03.jpg')" aria-hidden="true"></span>
+  <span class="ph-veil" aria-hidden="true"></span>
+  <div class="ph-in">
+    <span class="en" style="--n:0">Book</span>
+    <h1 style="--n:1">ご著書のご紹介</h1>
+    <p class="ph-lead" style="--n:2">『月の輪のひみつ』と、月暈（ハロー）の物語。</p>
   </div>
-  <span class="mv-haze" aria-hidden="true"></span>
-
-  <!-- 光の粒 -->
-  <div class="mv-dust" id="dust" aria-hidden="true"></div>
-
-  <!-- 城を背負ったクジラが夜空を泳ぐ -->
-  <div class="mv-chara" aria-hidden="true">
-    <span class="float mv-whale swim in-l" style="--i:5" data-px="-70"><span class="float-in"><img src="image/mv-whale.png" alt="" width="1040" height="748" loading="eager"></span></span>
-  </div>
-
-  <div class="mv-copy">
-    <span class="kvline" style="--i:0"><img class="mv-logo" src="image/logo.png" alt="アチェリのおやつ" width="800" height="241"></span>
-    <span class="kvline mv-en" style="--i:1">aceri no oyatsu</span>
-    <!-- 1文字ずつ span に割るため、読み上げが1文字ずつにならないよう
-         aria-label で本来の見出し文を渡し、中身は読み上げ対象から外す -->
-    <h1 aria-label="森のおくの、ちいさなおやつ屋さん">
-      <span aria-hidden="true" class="line"><span class="ch" style="--n:0">森</span><span class="ch" style="--n:1">の</span><span class="ch" style="--n:2">お</span><span class="ch" style="--n:3">く</span><span class="ch" style="--n:4">の</span><span class="ch" style="--n:5">、</span></span><span aria-hidden="true" class="line"><span class="ch" style="--n:6">ち</span><span class="ch" style="--n:7">い</span><span class="ch" style="--n:8">さ</span><span class="ch" style="--n:9">な</span><span class="ch" style="--n:10">お</span><span class="ch" style="--n:11">や</span><span class="ch" style="--n:12">つ</span><span class="ch" style="--n:13">屋</span><span class="ch" style="--n:14">さ</span><span class="ch" style="--n:15">ん</span></span>
-    </h1>
-    <p class="mv-sub kvline" style="--i:6">
-      <span class="line">見て楽しく、食べておいしい。</span>
-      <span class="line">月暈（ハロー）の物語から生まれる焼菓子。</span>
-    </p>
-  </div>
-
-  <span class="vignette" aria-hidden="true"></span>
-  <a class="scroll-cue" href="#message" aria-label="下へスクロール"><span>SCROLL</span><i></i></a>
 </div>
+<div class="nightfade" aria-hidden="true"></div>
 
 <main>
-
 <!-- ============================================================
-     工房のご案内（MV直下）
-     工房のすぐ近くに公園が整備されるため、公園から来られた方が
-     「どこ・いつ・どう行く」をスクロールなしで確認できる位置に置く。
+     ご著書『月の輪のひみつ』
      ============================================================ -->
-<section class="mvinfo paper" aria-label="工房のご案内">
-  <div class="wrap mvinfo-in">
-    <div class="mvinfo-col" style="--n:0">
-      <span class="en">Access</span>
-      <p class="mvinfo-adr"><span class="line">〒446-0045</span><span class="line">愛知県安城市横山町石ナ曽根181-3</span></p>
-      <div class="mvinfo-btns">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%AE%89%E5%9F%8E%E5%B8%82%E6%A8%AA%E5%B1%B1%E7%94%BA%E7%9F%B3%E3%83%8A%E6%9B%BD%E6%A0%B9181-3" target="_blank" rel="noopener">
-          <span class="lbl">地図を開く</span>
-          <span class="arrowCircle" aria-hidden="true">
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-          </span>
-        </a>
-        <a class="btn" href="shop.html#route">
-          <span class="lbl">道順を見る</span>
-          <span class="arrowCircle" aria-hidden="true">
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-          </span>
-        </a>
-      </div>
-    </div>
-    <div class="mvinfo-col" style="--n:1">
-      <span class="en">Open</span>
-      <p class="mvinfo-open"><a href="shop.html#hours"><span id="nextopen">毎月第1・3 水曜日・土曜日 13:00〜17:00</span></a></p>
-      <p class="mvinfo-note">営業は毎月第1・第3の水曜日と土曜日、13:00〜17:00です。臨時休業は <a href="https://www.instagram.com/aceri_no_oyatsu" target="_blank" rel="noopener">Instagram</a> でお知らせします。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     メッセージ
-     ============================================================ -->
-<section class="block paper" id="message" aria-labelledby="message-h">
-  <span class="float msg-bear bob in-l" data-px="-95" aria-hidden="true"><span class="float-in"><img src="image/book-bear-2.png" alt="" width="420" height="635" loading="lazy"></span></span>
-  <span class="float msg-drgn fly in-r" style="--i:1" data-px="-130" aria-hidden="true"><span class="float-in"><img src="image/book-dragon-2.png" alt="" width="620" height="357" loading="lazy"></span></span>
-
-  <div class="wrap inner">
-    <div class="sec-head">
-      <span class="en anim" style="--i:0">Welcome</span>
-      <h2 class="anim" style="--i:1" id="message-h">
-        <span class="line">ようこそ、</span><span class="line">ハローの国の森へ。</span>
-      </h2>
-      <div class="leafrule anim" style="--i:2" aria-hidden="true">
-        <i></i>
-        <svg viewBox="0 0 24 24"><path d="M12 2C7 6 4 11 4 16a8 8 0 0 0 16 0c0-5-3-10-8-14Z"/></svg>
-        <i></i>
-      </div>
-    </div>
-    <div class="body">
-      <p class="anim" style="--i:0">
-        <span class="line">アチェリのおやつは、</span><span class="line"><span class="w">オリジナルの物語</span><span class="w">「月暈（ハロー）の物語」から</span></span>
-        <span class="line">生まれた焼菓子屋です。</span>
-      </p>
-      <p class="anim" style="--i:1">
-        <span class="line"><span class="w">物語に出てくるしあわせキノコや、</span><span class="w">願い星、満月。</span></span>
-        <span class="line">絵本のなかのモチーフをそのまま形にして、</span>
-        <span class="line"><span class="w">見て楽しく、</span><span class="w">食べておいしいおやつにしています。</span></span>
-      </p>
-      <p class="anim" style="--i:2">
-        <span class="line">甘味は主にメープルシュガー、</span>
-        <span class="line"><span class="w">小麦粉は愛知県産の</span><span class="w">「きぬあかり」を使って、</span></span>
-        <span class="line"><span class="w">安城市の小さな工房で</span><span class="w">ひとつずつ焼いています。</span></span>
-      </p>
-    </div>
-    <div class="sec-more">
-      <a class="btn" href="items.html">
-        <span class="lbl">アチェリのおやつについて</span>
-        <span class="arrowCircle" aria-hidden="true">
-          <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-          <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     人気の焼菓子
-     ============================================================ -->
-<section class="block paper" id="items" aria-labelledby="items-h">
-  <span class="float items-c1 bob2 in-l" data-px="-110" aria-hidden="true"><span class="float-in"><img src="image/illust-04.png" alt="" width="320" height="370" loading="lazy"></span></span>
-  <span class="float items-drgn fly in-r flip" style="--i:3" data-px="-120" aria-hidden="true"><span class="float-in"><img src="image/book-dragon-1.png" alt="" width="620" height="251" loading="lazy"></span></span>
+<section class="block bg-a" id="book" aria-labelledby="book-h">
+  <span class="float st-kino1 bob2 in-l" data-px="-90" aria-hidden="true"><span class="float-in"><img src="image/illust-05.png" alt="" width="320" height="370" loading="lazy"></span></span>
+  <span class="float st-drop1 wander in-t" style="--i:1" data-px="-46" aria-hidden="true"><span class="float-in"><img src="image/book-drop-6.png" alt="" width="176" height="192" loading="eager"></span></span>
 
   <div class="wrap">
-    <div class="sec-head">
-      <img class="icon anim" style="--i:0" src="image/icon-03.png" alt="" width="400" height="346" loading="lazy" aria-hidden="true">
-      <span class="en anim" style="--i:1">Items</span>
-      <h2 class="anim" style="--i:2" id="items-h">人気の焼菓子</h2>
-      <p class="lead anim" style="--i:3"><span class="w">物語のなかから、</span><span class="w">そのまま出てきたような</span><span class="w">おやつたち。</span></p>
-    </div>
-
-    <div class="item-grid">
-      <article class="item anim" style="--i:0">
-        <div class="ph"><img src="image/item-kinoko-mini.jpg" alt="しあわせキノコのクッキー(ミニ)" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>しあわせキノコのクッキー<br>（ミニ）</h3>
-          <p class="desc"><span class="w">当店1番の人気クッキー！</span><span class="w">実寸大よりもミニサイズなので、</span><span class="w">3枚入り。</span></p>
-          <p class="price">280円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:1">
-        <div class="ph"><img src="image/item-fullmoon.jpg" alt="フルムーン(満月)のクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>フルムーン（満月）の<br>クッキー</h3>
-          <p class="desc"><span class="w">HALOの世界のフルムーン(満月)を</span><span class="w">モチーフにした</span><span class="w">紅茶味のクッキー。</span></p>
-          <p class="price">360円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:2">
-        <div class="ph"><img src="image/item-wishstar.jpg" alt="みんなの願い星のクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>みんなの願い星の<br>クッキー</h3>
-          <p class="desc"><span class="w">HALOの物語に登場する、</span><span class="w">願い星のクッキー。</span><span class="w">味は色々、願いも色々。</span></p>
-          <p class="price">360円 <small>(税込)</small></p>
-        </div>
-      </article>
-    </div>
-
-    <div class="sec-more">
-      <a class="btn" href="items.html">
-        <span class="lbl">商品一覧を見る</span>
-        <span class="arrowCircle" aria-hidden="true">
-          <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-          <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-        </span>
-      </a>
+    <div class="bookintro">
+      <div class="anim">
+        <figure class="bookcover">
+          <img src="image/book-cover.jpg" alt="小説『月の輪のひみつ』の書影。焼菓子や紅茶と一緒に並べたところ" width="800" height="1200" loading="lazy">
+        </figure>
+      </div>
+      <div class="anim" style="--i:1">
+        <span class="en">Book</span>
+        <h2 class="booktitle" id="book-h"><span class="kagi">『</span>月の輪のひみつ<span class="kagi">』</span></h2>
+        <dl class="deflist wide mt-m">
+          <div class="row"><dt>書名</dt><dd>月の輪のひみつ</dd></div>
+          <div class="row"><dt>著者</dt><dd>菓月ももこ</dd></div>
+          <div class="row"><dt>イラスト</dt><dd>カミオリホ</dd></div>
+          <div class="row"><dt>出版社</dt><dd>文芸社</dd></div>
+          <div class="row"><dt>サイズ</dt><dd>13.2 × 1.6 × 19.4 cm</dd></div>
+          <div class="row"><dt>ページ数</dt><dd>140ページ</dd></div>
+          <div class="row"><dt>価格</dt><dd>1,320円（税込）</dd></div>
+          <div class="row"><dt>お求め先</dt><dd><a href="https://halotales.stores.jp/items/6a0180d34961f597f359b6cf" target="_blank" rel="noopener">halotales（STORES）</a></dd></div>
+        </dl>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     月暈の物語（ピン留めスクロール）
+     月暈（ハロー）とは
      ============================================================ -->
-<section class="pin-con dark" id="story" style="height:360vh" data-stages=".st" data-scene aria-labelledby="story-h">
-  <div class="pin">
-    <span class="sbg sbg1" aria-hidden="true"></span>
-    <span class="sbg sbg2" aria-hidden="true"></span>
-    <span class="veil" aria-hidden="true"></span>
+<section class="block dark" id="halo" aria-labelledby="halo-h">
+  <span class="curtain" aria-hidden="true"></span>
+  <span class="float st-whale fly in-r" data-px="-120" aria-hidden="true"><span class="float-in"><img src="image/mv-whale.png" alt="" width="1040" height="748" loading="lazy"></span></span>
+  <span class="float st-drop2 wander in-b" style="--i:1" data-px="-40" aria-hidden="true"><span class="float-in"><img src="image/book-drop-3.png" alt="" width="180" height="196" loading="lazy"></span></span>
 
-    <div class="halo" aria-hidden="true">
+  <div class="wrap center">
+    <div class="halo-fig anim" aria-hidden="true">
       <svg viewBox="0 0 400 400">
-        <circle class="rp rp1" cx="200" cy="200" r="176"/>
-        <circle class="rp rp2" cx="200" cy="200" r="176"/>
-        <circle class="rp rp3" cx="200" cy="200" r="176"/>
-        <circle class="rp rp4" cx="200" cy="200" r="176"/>
+        <circle class="r3" cx="200" cy="200" r="176" stroke-width=".9"/>
+        <circle class="r2" cx="200" cy="200" r="142" stroke-width="1.1"/>
+        <circle class="r1" cx="200" cy="200" r="110" stroke-width="1.3"/>
         <circle class="moon" cx="200" cy="200" r="34"/>
       </svg>
     </div>
+    <div class="sec-head">
+      <span class="en anim" style="--i:0">Halo</span>
+      <h2 class="anim" style="--i:1" id="halo-h">月暈（つきがさ）の物語</h2>
+    </div>
+    <div class="prose anim" style="--i:2">
+      <p>
+        <span class="line">皆さん、お月さまの周りにぼんやりと</span><span class="line"><span class="w">輪っかができる様子を</span><span class="w">見たことがありますか？</span></span>
+        <span class="line"><span class="w">それが月暈（つきがさ）、</span><span class="w">ハローとも呼ばれています。</span></span>
+      </p>
+      <p>
+        <span class="line"><span class="w">天気が悪くなる、</span><span class="w">悪いことが起きる前兆と</span><span class="w">言われたりします。</span></span>
+        <span class="line"><span class="w">でも、</span><span class="w">何か今まで出会ったことがない変化が</span></span><span class="line"><span class="w">どこかで起きていると考えると</span><span class="w">ワクワクしませんか。</span></span>
+      </p>
+      <p>
+        <span class="line">この物語は、飛行機乗りの少年ピットが</span><span class="line">月暈の現れる時にだけ、</span>
+        <span class="line"><span class="w">自分たちの住む世界と異世界、</span><span class="w">ハローの国を結ぶ扉をくぐり、</span></span>
+        <span class="line"><span class="w">色々な人やモノと出会い</span><span class="w">成長していく</span><span class="w">冒険ファンタジーです。</span></span>
+      </p>
+    </div>
+  </div>
+</section>
 
-    <div class="inner">
-      <h2 id="story-h">月暈の物語</h2>
-      <div class="st on">
-        <p>
-          <span class="line">皆さん、お月さまの周りにぼんやりと</span><span class="line">輪っかができる様子を見たことがありますか？</span>
-          <span class="line"><span class="w">それが月暈（つきがさ）、</span><span class="w">ハローとも呼ばれています。</span></span>
-        </p>
+<!-- ============================================================
+     Story 01
+     ============================================================ -->
+<section class="block bg-a" id="tale1" data-scene aria-labelledby="tale1-h">
+  <span class="float st-kino2 bob3 in-l" data-px="-80" aria-hidden="true"><span class="float-in"><img src="image/illust-12.png" alt="" width="320" height="370" loading="lazy"></span></span>
+  <span class="float st-drop3 wander in-r" style="--i:1" data-px="-44" aria-hidden="true"><span class="float-in"><img src="image/book-drop-8.png" alt="" width="144" height="184" loading="lazy"></span></span>
+
+  <div class="wrap">
+    <div class="taletitle anim">
+      <img src="image/story01-title.png" alt="" width="421" height="572" loading="lazy" aria-hidden="true">
+      <span class="en">Story 01</span>
+      <h2 id="tale1-h">アチェリとしあわせキノコの物語</h2>
+      <p class="meta" style="color:var(--text-sub)">全6ページ・完結</p>
+    </div>
+
+    <div class="bookflip anim mt-m" data-pages="6">
+      <input class="bk-sw sp1" type="radio" name="bk-t1" id="bk-t1-1" checked aria-label="1・2ページ">
+      <input class="bk-sw sp2" type="radio" name="bk-t1" id="bk-t1-2" aria-label="3・4ページ">
+      <input class="bk-sw sp3" type="radio" name="bk-t1" id="bk-t1-3" aria-label="5・6ページ">
+      <div class="bk-in">
+        <img class="bk-frame" src="image/story-book.png" alt="" width="1000" height="739" loading="lazy" aria-hidden="true">
+
+        <div class="bk-leaf l base">
+          <span class="bk-page"><img src="image/story01-p1.jpg" alt="絵本「アチェリとしあわせキノコの物語」1ページ目" width="561" height="762" loading="lazy"></span>
+          <span class="bk-cap">1ページ</span>
+        </div>
+        <div class="bk-leaf r base">
+          <span class="bk-page"><img src="image/story01-p6.jpg" alt="絵本「アチェリとしあわせキノコの物語」6ページ目" width="557" height="759" loading="lazy"></span>
+          <span class="bk-cap">6ページ（最終）</span>
+        </div>
+
+        <label class="bk-leaf r turn face sh1" for="bk-t1-2">
+          <span class="bk-page"><img src="image/story01-p2.jpg" alt="絵本「アチェリとしあわせキノコの物語」2ページ目" width="561" height="762" loading="lazy"></span>
+          <span class="bk-cap">2ページ<span class="bk-hint">めくる</span></span>
+        </label>
+        <label class="bk-leaf l turn back sh1" for="bk-t1-1">
+          <span class="bk-page"><img src="image/story01-p3.jpg" alt="絵本「アチェリとしあわせキノコの物語」3ページ目" width="559" height="760" loading="lazy"></span>
+          <span class="bk-cap">3ページ<span class="bk-hint">もどる</span></span>
+        </label>
+
+        <label class="bk-leaf r turn face sh2" for="bk-t1-3">
+          <span class="bk-page"><img src="image/story01-p4.jpg" alt="絵本「アチェリとしあわせキノコの物語」4ページ目" width="555" height="754" loading="lazy"></span>
+          <span class="bk-cap">4ページ<span class="bk-hint">めくる</span></span>
+        </label>
+        <label class="bk-leaf l turn back sh2" for="bk-t1-2">
+          <span class="bk-page"><img src="image/story01-p5.jpg" alt="絵本「アチェリとしあわせキノコの物語」5ページ目" width="555" height="760" loading="lazy"></span>
+          <span class="bk-cap">5ページ<span class="bk-hint">もどる</span></span>
+        </label>
       </div>
-      <div class="st">
-        <p>
-          <span class="line"><span class="w">天気が悪くなる、</span><span class="w">悪いことが起きる前兆と</span><span class="w">言われたりします。</span></span>
-          <span class="line"><span class="w">でも、</span><span class="w">何か今まで出会ったことがない変化が</span></span><span class="line"><span class="w">どこかで起きていると考えると</span><span class="w">ワクワクしませんか。</span></span>
-        </p>
-      </div>
-      <div class="st">
-        <p>
-          <span class="line">この物語は、飛行機乗りの少年ピットが</span><span class="line">月暈の現れる時にだけ、</span>
-          <span class="line"><span class="w">自分たちの住む世界と異世界、</span><span class="w">ハローの国を結ぶ扉をくぐり、</span></span>
-          <span class="line"><span class="w">色々な人やモノと出会い</span><span class="w">成長していく</span><span class="w">冒険ファンタジーです。</span></span>
-          <span class="line">では、物語をお話しましょう。</span>
-        </p>
-      </div>
-      <div class="stage-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
-      <div class="sec-more">
-        <a class="btn" href="story.html">
-          <span class="lbl">物語を読む</span>
-          <span class="arrowCircle" aria-hidden="true">
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-          </span>
-        </a>
+      <div class="bk-ui">
+        <button class="bk-arw prev" type="button" aria-label="まえのページ"><i aria-hidden="true"></i></button>
+        <button class="bk-arw next" type="button" aria-label="つぎのページ"><i aria-hidden="true"></i></button>
+        <span class="bk-cnt" role="status">1 / 6</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     店舗情報
+     Story 02
      ============================================================ -->
-<section class="block paper" id="shop" aria-labelledby="shop-h">
-  <span class="float shop-c1 bob in-r" data-px="-80" aria-hidden="true"><span class="float-in"><img src="image/illust-18.png" alt="" width="320" height="370" loading="lazy"></span></span>
-  <span class="float shop-drgn fly in-l flip" style="--i:1" data-px="-100" aria-hidden="true"><span class="float-in"><img src="image/book-dragon-2.png" alt="" width="620" height="357" loading="lazy"></span></span>
+<section class="block dark" id="tale2" data-scene aria-labelledby="tale2-h">
+  <span class="float st-drgn fly in-r flip" data-px="-110" aria-hidden="true"><span class="float-in"><img src="image/book-dragon-2.png" alt="" width="620" height="357" loading="lazy"></span></span>
+
   <div class="wrap">
-    <div class="sec-head">
-      <img class="icon anim" style="--i:0" src="image/icon-05.png" alt="" width="400" height="346" loading="lazy" aria-hidden="true">
-      <span class="en anim" style="--i:1">Store</span>
-      <h2 class="anim" style="--i:2" id="shop-h">店舗情報</h2>
+    <div class="taletitle anim">
+      <img src="image/story02-title.png" alt="" width="576" height="786" loading="lazy" aria-hidden="true">
+      <span class="en">Story 02</span>
+      <h2 id="tale2-h">しあわせキノコと水玉じゃくしの物語</h2>
+      <p class="meta">全5ページ・つづきもの</p>
     </div>
-    <div class="shop-grid">
-      <div class="anim">
-        <p class="hours-strong">
-          <span class="line">毎月第1・3 水曜日・土曜日</span>
-          <span class="line">13:00〜17:00 オープン</span>
-        </p>
-        <dl class="deflist">
-          <div class="row"><dt>屋号</dt><dd>アチェリのおやつ</dd></div>
-          <div class="row"><dt>所在地</dt><dd>〒446-0045<br>愛知県安城市横山町石ナ曽根181-3</dd></div>
-          <div class="row"><dt>営業日</dt><dd>毎月第1・3 水曜日・土曜日</dd></div>
-          <div class="row"><dt>営業時間</dt><dd>13:00〜17:00</dd></div>
-          <div class="row"><dt>駐車場</dt><dd><span class="req">[要記入]</span></dd></div>
-        </dl>
-        <div class="sec-more" style="text-align:left">
-          <a class="btn" href="shop.html">
-            <span class="lbl">店舗情報を見る</span>
-            <span class="arrowCircle" aria-hidden="true">
-              <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-              <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-            </span>
-          </a>
+
+    <div class="bookflip anim mt-m" data-pages="5">
+      <input class="bk-sw sp1" type="radio" name="bk-t2" id="bk-t2-1" checked aria-label="1・2ページ">
+      <input class="bk-sw sp2" type="radio" name="bk-t2" id="bk-t2-2" aria-label="3・4ページ">
+      <input class="bk-sw sp3" type="radio" name="bk-t2" id="bk-t2-3" aria-label="5ページ">
+      <div class="bk-in">
+        <img class="bk-frame" src="image/story-book.png" alt="" width="1000" height="739" loading="lazy" aria-hidden="true">
+
+        <div class="bk-leaf l base">
+          <span class="bk-page"><img src="image/story02-p1.jpg" alt="絵本「しあわせキノコと水玉じゃくしの物語」1ページ目（登場キャラクターの紹介）" width="561" height="762" loading="lazy"></span>
+          <span class="bk-cap">1ページ</span>
         </div>
+        <!-- ★ 全5ページなので、3見開き目の右は白紙のまま（本の紙がそのまま見える）。
+             「To be continued.」の向かいが空いているのは、本としては自然な収まり。 -->
+
+        <label class="bk-leaf r turn face sh1" for="bk-t2-2">
+          <span class="bk-page"><img src="image/story02-p2.jpg" alt="絵本「しあわせキノコと水玉じゃくしの物語」2ページ目" width="561" height="762" loading="lazy"></span>
+          <span class="bk-cap">2ページ<span class="bk-hint">めくる</span></span>
+        </label>
+        <label class="bk-leaf l turn back sh1" for="bk-t2-1">
+          <span class="bk-page"><img src="image/story02-p3.jpg" alt="絵本「しあわせキノコと水玉じゃくしの物語」3ページ目" width="558" height="760" loading="lazy"></span>
+          <span class="bk-cap">3ページ<span class="bk-hint">もどる</span></span>
+        </label>
+
+        <label class="bk-leaf r turn face sh2" for="bk-t2-3">
+          <span class="bk-page"><img src="image/story02-p4.jpg" alt="絵本「しあわせキノコと水玉じゃくしの物語」4ページ目" width="559" height="759" loading="lazy"></span>
+          <span class="bk-cap">4ページ<span class="bk-hint">めくる</span></span>
+        </label>
+        <label class="bk-leaf l turn back sh2" for="bk-t2-2">
+          <span class="bk-page"><img src="image/story02-p5.jpg" alt="絵本「しあわせキノコと水玉じゃくしの物語」5ページ目（つづく）" width="557" height="759" loading="lazy"></span>
+          <span class="bk-cap">5ページ（つづく）<span class="bk-hint">もどる</span></span>
+        </label>
       </div>
-      <div class="anim" style="--i:1">
-        <div class="map-embed">
-          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%AE%89%E5%9F%8E%E5%B8%82%E6%A8%AA%E5%B1%B1%E7%94%BA%E7%9F%B3%E3%83%8A%E6%9B%BD%E6%A0%B9181-3&output=embed" loading="lazy" title="アチェリのおやつの地図"></iframe>
-        </div>
+      <div class="bk-ui">
+        <button class="bk-arw prev" type="button" aria-label="まえのページ"><i aria-hidden="true"></i></button>
+        <button class="bk-arw next" type="button" aria-label="つぎのページ"><i aria-hidden="true"></i></button>
+        <span class="bk-cnt" role="status">1 / 5</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============================================================
+     物語から生まれた焼菓子へ
+     ============================================================ -->
+<section class="block bg-a" id="tosweets" aria-labelledby="tosweets-h">
+  <div class="wrap center">
+    <div class="sec-head">
+      <img class="icon anim" style="--i:0" src="image/icon-18-book.png" alt="" width="400" height="346" loading="lazy" aria-hidden="true">
+      <span class="en anim" style="--i:1">From the story</span>
+      <h2 class="anim" style="--i:2" id="tosweets-h"><span class="w">この物語から、</span><span class="w">焼菓子ができました</span></h2>
+      <p class="lead anim" style="--i:3">
+        <span class="line"><span class="w">マフィンも、</span><span class="w">しあわせキノコのクッキーも、</span><span class="w">ドラゴンのたまごも。</span></span>
+        <span class="line"><span class="w">お話に出てきたものが、</span><span class="w">そのまま並んでいます。</span></span>
+      </p>
+    </div>
+    <div class="sec-more">
+      <a class="btn" href="items.html">
+        <span class="lbl">焼菓子のご紹介へ</span>
+        <span class="arrowCircle" aria-hidden="true">
+          <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
+          <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- ============================================================
@@ -1391,43 +1698,12 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- オープニング ---------- */
-  var op = document.getElementById('op');
-  var mv = document.getElementById('mv');
-  function startMv(){ if (mv) mv.classList.add('on'); }
-  if (reduce){
-    if (op) op.classList.add('done');
-    startMv();
-  } else {
-    window.setTimeout(function(){
-      if (op) op.classList.add('done');
-      startMv();
-      revealKv();   /* KVのキャラを順番に登場させる */
-    }, 1500);
-  }
+  /* 見出し帯の登場は CSS アニメーション側で完結している（JS不要） */
+  var phead = document.querySelector('.phead');
 
-  /* ---------- 光の粒 ---------- */
-  var dust = document.getElementById('dust');
-  if (dust && !reduce){
-    var frag = document.createDocumentFragment();
-    for (var d = 0; d < 26; d++){
-      var i = document.createElement('i');
-      var sz = 2 + Math.random() * 3.4;
-      i.style.width = sz.toFixed(1) + 'px';
-      i.style.height = sz.toFixed(1) + 'px';
-      i.style.left = (Math.random() * 100).toFixed(2) + '%';
-      i.style.top  = (40 + Math.random() * 60).toFixed(2) + '%';
-      i.style.animationDuration = (7 + Math.random() * 9).toFixed(1) + 's';
-      i.style.animationDelay = (Math.random() * 9).toFixed(1) + 's';
-      frag.appendChild(i);
-    }
-    dust.appendChild(frag);
-  }
-
-  /* ---------- ページ全体の光の粒 ---------- */
-  /* 白は夜空で光り、金は紙の上でも見える。混ぜて1枚で両方の地に効かせる。
-     animationDelay を負にして、読み込んだ瞬間から粒が散らばった状態にする
-     （0以上にすると、最初の数秒だけ画面がすかすかになる）。 */
+  /* ---------- ページ全体の光の粒（TOPと同じ） ----------
+     白は夜空で光り、金は紙の上でも見える。混ぜて1枚で両方の地に効かせる。
+     animationDelay を負にして、読み込んだ瞬間から粒が散らばった状態にする。 */
   var pdust = document.getElementById('pagedust');
   if (pdust && !reduce){
     var pfrag = document.createDocumentFragment();
@@ -1437,7 +1713,6 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
       var gold = Math.random() < .52;
       var psz = (gold ? 2.2 : 1.5) + Math.random() * (gold ? 3.2 : 2.6);
       if (gold) pe.className = 'g';
-      /* 金は紙の上を通るので控えめに、白は夜空でしか見えないので強めに */
       pe.style.setProperty('--o', gold ? '.66' : '.8');
       pe.style.width  = psz.toFixed(1) + 'px';
       pe.style.height = psz.toFixed(1) + 'px';
@@ -1482,37 +1757,6 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
     });
   }
 
-
-  /* ---------- 次の営業日 ----------
-     営業日は「毎月第1・第3の水曜日・土曜日 13:00〜17:00」。shop.html のカレンダーと同じ規則。
-     HTMLには静的な初期値を入れてあるので、JSが動かない環境でも正しい案内が残る。
-     臨時休業までは反映できないため、帯の下に注記を添えている。 */
-  var nextopen = document.getElementById('nextopen');
-  if (nextopen){
-    var WD = '日月火水木金土';
-    /* 第n週 = floor((日-1)/7)+1。水曜(3)・土曜(6)で n が 1 か 3 の日だけ開いている */
-    function isOpenDay(d){
-      var w = d.getDay();
-      if (w !== 3 && w !== 6) return false;
-      var n = Math.floor((d.getDate() - 1) / 7) + 1;
-      return n === 1 || n === 3;
-    }
-    var now = new Date();
-    var cur = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    if (isOpenDay(cur) && now.getHours() < 17){
-      nextopen.textContent = (now.getHours() >= 13 ? '本日オープン' : '本日') + ' 13:00〜17:00';
-    } else {
-      for (var dd = 0; dd < 120; dd++){
-        cur.setDate(cur.getDate() + 1);
-        if (isOpenDay(cur)){
-          nextopen.textContent = '次の営業日 ' + (cur.getMonth() + 1) + '月' + cur.getDate() + '日（'
-                               + WD.charAt(cur.getDay()) + '）13:00〜17:00';
-          break;
-        }
-      }
-    }
-  }
-
   /* ---------- スクロール表示（-inview 相当） ----------
      IntersectionObserver を主、スクロール時の実測を副に持つ二重化。
      IO が発火しない環境でも本文が opacity:0 のまま残らないようにする。 */
@@ -1524,7 +1768,6 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
     var n = pending.indexOf(el);
     if (n > -1) pending.splice(n, 1);
   }
-  /* 画面に入っているものを実測で出す（tick から毎回呼ぶ） */
   function revealPass(){
     if (!pending.length) return;
     var vh = window.innerHeight || 1;
@@ -1532,12 +1775,6 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
       var r = pending[i].getBoundingClientRect();
       if (r.top < vh * 0.92 && r.bottom > 0) reveal(pending[i]);
     }
-  }
-
-  /* KV内の浮遊物はファーストビューなので、閾値を待たず最初から出す
-     （--i のディレイで順番に登場する） */
-  function revealKv(){
-    [].slice.call(document.querySelectorAll('.mv .float')).forEach(reveal);
   }
 
   if (reduce){
@@ -1554,36 +1791,17 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
     }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
     animEls.forEach(function(el){ io.observe(el); });
   }
-  /* 最終保険：読み込み後もまだ隠れたままなら、画面内のものを出す */
   window.addEventListener('load', function(){ window.setTimeout(revealPass, 300); });
 
-  /* ---------- ストーリーの段階切替 ---------- */
-  var stages = {};
-  document.querySelectorAll('.pin-con[data-stages]').forEach(function(con){
-    stages[con.id] = {
-      con:   con,
-      items: [].slice.call(con.querySelectorAll(con.getAttribute('data-stages'))),
-      dots:  [].slice.call(con.querySelectorAll('.stage-dots i')),
-      i: 0
-    };
-  });
-  function setStage(s, i){
-    if (!s || !s.items.length) return;
-    i = Math.max(0, Math.min(s.items.length - 1, i));
-    if (i === s.i) return;
-    s.i = i;
-    s.items.forEach(function(el, n){ el.classList.toggle('on', n === i); });
-    s.dots.forEach(function(d, n){ d.classList.toggle('on', n === i); });
-  }
-
-  /* ---------- スクロール連動（パララックス／ピン進捗） ---------- */
-  var mvArt = document.querySelector('.mv-art');
+  /* ---------- スクロール連動（パララックス） ---------- */
+  var pheadBg = document.querySelector('.phead .ph-bg');
   var pxPhotos = [].slice.call(document.querySelectorAll('.px-photo'));
-  /* 動きの追加ぶん（参考: recruit.dimps.co.jp）
+  /* 動きの追加ぶん（参考: recruit.dimps.co.jp）。TOPの index.html と同じ処理。
      - scenes   … 物語の場面。画面の中央線をまたぐ間だけ「絵本の縁」を閉じる
      - curtains … 濃緑セクションの幕。入ってきたとき一度だけ下へ抜ける */
   var scenes   = [].slice.call(document.querySelectorAll('[data-scene]'));
   var curtains = [].slice.call(document.querySelectorAll('.curtain'));
+  var haloFig  = document.querySelector('.halo-fig');
 
   /* 浮遊物は数が多いので、位置を先に測ってキャッシュする。
      offsetTop/offsetHeight は transform の影響を受けないため、
@@ -1609,25 +1827,23 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
     var vh = window.innerHeight || 1;
     var sy = window.pageYOffset;
 
-    /* 浮遊物：画面内の進行度に応じて上下へ（レイアウト再計算なし） */
     for (var f = 0; f < floats.length; f++){
       var o = floats[f];
-      var top = o.top - sy;                                /* 画面座標に変換 */
+      var top = o.top - sy;
       if (top + o.h < -240 || top > vh + 240) continue;
-      var prog = (vh - top) / (vh + o.h);                  /* 0→1 */
+      var prog = (vh - top) / (vh + o.h);
       if (o.inner) o.inner.style.transform =
         'translate3d(0,' + ((prog - .5) * o.amt).toFixed(2) + 'px,0)';
     }
 
-    /* KVの原画をゆっくり流す（スクロール量の18%だけ下へ） */
-    if (mv && mvArt){
-      var mr = mv.getBoundingClientRect();
-      if (mr.bottom > 0){
-        mvArt.style.transform = 'translate3d(0,' + ((-mr.top) * 0.18).toFixed(2) + 'px,0)';
+    /* 見出し帯の写真をゆっくり流す */
+    if (phead && pheadBg){
+      var hr = phead.getBoundingClientRect();
+      if (hr.bottom > 0){
+        pheadBg.style.transform = 'translate3d(0,' + ((-hr.top) * 0.16).toFixed(2) + 'px,0)';
       }
     }
 
-    /* 帯写真のパララックス */
     for (var p = 0; p < pxPhotos.length; p++){
       var sec = pxPhotos[p], sr = sec.getBoundingClientRect();
       if (sr.bottom < 0 || sr.top > vh) continue;
@@ -1638,14 +1854,15 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
       }
     }
 
-    /* ピン留めセクションの進捗 */
-    for (var k in stages){
-      if (!Object.prototype.hasOwnProperty.call(stages, k)) continue;
-      var s = stages[k], cr = s.con.getBoundingClientRect();
-      var total = s.con.offsetHeight - vh;
-      var prog2 = total > 0 ? Math.min(1, Math.max(0, -cr.top / total)) : 0;
-      s.con.style.setProperty('--p', prog2.toFixed(4));
-      setStage(s, Math.floor(prog2 * s.items.length * 0.999));
+    /* 月暈の輪を、図が画面を上がっていく量に合わせて内側から描く。
+       TOPの #story .halo と同じ考え方で、進捗を --p として渡すだけにしてある。 */
+    if (haloFig){
+      var fr = haloFig.getBoundingClientRect();
+      if (fr.bottom > -300 && fr.top < vh + 300){
+        /* 図の上端が画面下端に来た時点を0、画面の40%位置まで上がった時点を1とする */
+        var hp = (vh - fr.top) / (vh * 0.6);
+        haloFig.style.setProperty('--p', (hp < 0 ? 0 : hp > 1 ? 1 : hp).toFixed(3));
+      }
     }
 
     /* 絵本のページの縁：物語の場面が画面の中央線をまたいでいるか */
@@ -1666,10 +1883,8 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
       if (cr2.top < vh * 0.9 && cr2.bottom > 0) cel.classList.add('sweep');
     }
 
-    /* スクロール表示の実測フォールバック */
-    revealPass();
 
-    /* ヘッダー */
+    revealPass();
     if (header) header.classList.toggle('scrolled', window.pageYOffset > 12);
   }
 
@@ -1686,11 +1901,95 @@ body.night.sub .nightfade::before{content:"";position:absolute;z-index:-1;
     window.addEventListener('resize', remeasure, { passive: true });
   }
   tick();
-  /* 遅延読み込み画像で高さが変わるため、読み込み後に測り直す */
   window.addEventListener('load', function(){
     remeasure();
     window.setTimeout(remeasure, 600);
   });
+})();
+</script>
+<script>
+/* ===== SP: 絵本を1ページずつ送る ============================================
+   本を2倍に広げて .bookflip の中に半分だけ出し、step 0..(ページ数-1) で送る。
+     ラジオ … いま何見開き目か（step を2で割った商）
+     .half-r … 窓を右half へパンする（step が奇数＝右ページ）
+   PCでは .bk-ui が display:none なので、これまでどおり紙を押してめくる。
+   ★ このJSが動かない場合は .bk-one が付かず、SPでも見開きのまま出る。 */
+(function(){
+  var mq = window.matchMedia('(max-width:767px)');
+  var list = document.querySelectorAll('.bookflip');
+
+  for (var k = 0; k < list.length; k++) setup(list[k]);
+
+  function setup(bf){
+    var sws = bf.querySelectorAll('.bk-sw');
+    var ui = bf.querySelector('.bk-ui');
+    if (!sws.length || !ui) return;
+    var prev = ui.querySelector('.bk-arw.prev');
+    var next = ui.querySelector('.bk-arw.next');
+    var cnt  = ui.querySelector('.bk-cnt');
+    /* Story 02 は全5ページ＝最後の見開きに右ページが無いので、
+       見開き数から数えず data-pages を正とする。 */
+    var pages = parseInt(bf.getAttribute('data-pages'), 10) || sws.length * 2;
+    var last = pages - 1;
+    var step = 0;
+
+    function apply(){
+      sws[Math.floor(step / 2)].checked = true;
+      bf.classList.toggle('half-r', step % 2 === 1);
+      prev.disabled = (step === 0);
+      next.disabled = (step === last);
+      cnt.textContent = (step + 1) + ' / ' + pages;
+    }
+    function go(d){
+      var n = step + d;
+      if (n < 0 || n > last) return;
+      step = n;
+      apply();
+    }
+
+    prev.addEventListener('click', function(e){ e.stopPropagation(); go(-1); });
+    next.addEventListener('click', function(e){ e.stopPropagation(); go(1); });
+    /* 窓の右半分タップで次、左半分タップで前（SPのときだけ） */
+    bf.addEventListener('click', function(e){
+      if (!mq.matches) return;
+      if (e.target.closest && e.target.closest('.bk-arw')) return;
+      var r = bf.getBoundingClientRect();
+      go(e.clientX > r.left + r.width / 2 ? 1 : -1);
+    });
+    /* PCで紙を押してめくったとき（＝ラジオが変わったとき）、SP側の step も
+       合わせておく。開いた見開きの左ページ＝step は見開き番号の2倍。 */
+    for (var s = 0; s < sws.length; s++){
+      (function(idx){
+        sws[idx].addEventListener('change', function(){
+          step = idx * 2;
+          apply();
+        });
+      })(s);
+    }
+
+    /* ★ PCで紙（label）を押すと、ブラウザが「隠してあるチェックボックスを
+       見える位置に」と画面を上へスクロールさせてしまう（実測 500〜700px）。
+       チェックボックスは .bookflip の左上に 1x1・opacity:0 で置いてあり、
+       本の上端が画面の外にあるときに必ず起きる。
+       label の既定動作を止めて、こちらで checked を切り替える。
+       フォーカスを移さないのでスクロールは起きない。
+       キーボード操作（Tab でチェックボックスへ → Space）はそのまま効く。
+       JSが動かない環境では既定動作のまま＝めくれる（スクロールの癖は残る）。 */
+    var labs = bf.querySelectorAll('label.bk-leaf.turn');
+    for (var i = 0; i < labs.length; i++){
+      labs[i].addEventListener('click', function(e){
+        e.preventDefault();       /* フォーカス移動＝上へのスクロールを止める */
+        if (mq.matches) return;   /* SPは窓タップ（bf の click）が step を進める */
+        var target = document.getElementById(this.htmlFor);
+        if (!target || target.checked) return;
+        target.checked = true;
+        target.dispatchEvent(new Event('change'));
+      });
+    }
+
+    bf.classList.add('bk-one');
+    apply();
+  }
 })();
 </script>
 </body>
