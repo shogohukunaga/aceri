@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>お買い求めいただける場所｜焼菓子屋 アチェリのおやつ（愛知県安城市）</title>
-<meta name="description" content="焼菓子屋「アチェリのおやつ」の工房は愛知県安城市横山町石ナ曽根181-3。営業は毎月第1・3水曜日と土曜日の13:00〜17:00です。地図・道順・今月の営業日カレンダー、ネットショップ、委託販売店、マルシェ出店、ふるさと納税でのお求め方法をご案内します。">
+<meta name="description" content="焼菓子屋「アチェリのおやつ」の工房は愛知県安城市横山町石ナ曽根181-3。営業は毎月第1週・第3週の水曜日と土曜日の13:00〜17:00です。地図・お車での行き方・今月の営業日カレンダー、ネットショップ、委託販売店、マルシェ出店、ふるさと納税でのお求め方法をご案内します。">
 <link rel="canonical" href="https://shogohukunaga.github.io/aceri/shop.html">
 <link rel="icon" href="image/logo-square.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="お買い求めいただける場所｜焼菓子屋 アチェリのおやつ（愛知県安城市）">
-<meta property="og:description" content="工房の地図と今月の営業日、公園からの道順、ネットショップでのお求め方法。愛知県安城市。">
+<meta property="og:description" content="工房の地図と今月の営業日、お車での行き方、ネットショップでのお求め方法。愛知県安城市。">
 <meta property="og:image" content="https://shogohukunaga.github.io/aceri/image/logo-square.png">
 <meta property="og:url" content="https://shogohukunaga.github.io/aceri/shop.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -1144,6 +1144,19 @@ main .block{overflow:hidden;}
   color:var(--pink-5);margin-bottom:7px;}
 .way p{margin-top:11px;font-size:13px;line-height:2.05;color:var(--text-sub);}
 
+/* 委託販売店・ふるさと納税の一覧。カード内に複数件ならぶ */
+.waylist{margin-top:12px;display:grid;gap:14px;}
+.waylist li{padding-top:14px;border-top:1px solid var(--line);}
+.waylist li:first-child{padding-top:0;border-top:0;}
+.waylist b{display:block;font-family:var(--font-serif);font-weight:400;
+  font-size:14px;letter-spacing:.08em;line-height:1.8;color:var(--text);}
+.waylist .sub{display:block;margin-top:4px;font-size:12px;letter-spacing:.08em;color:var(--pink-5);}
+.waylist .ad{display:block;margin-top:6px;font-size:12.5px;line-height:1.95;color:var(--text-sub);}
+.waylist a{display:inline-block;margin-top:8px;margin-right:14px;font-size:12.5px;
+  color:var(--pink-5);border-bottom:1px solid var(--line);
+  transition:border-color .4s var(--ease-out-expo);}
+.waylist a:hover{border-color:var(--pink-4);}
+
 /* ---- 浮遊するキャラ ---- */
 .sh-c1{width:clamp(64px,7.4vw,126px);right:2%;top:7%;--fo:.9;}
 .sh-drgn{width:clamp(76px,9vw,155px);left:-1%;bottom:9%;--fo:.85;}
@@ -1176,7 +1189,7 @@ main .block{overflow:hidden;}
   "@id":"#aceri",
   "name":"アチェリのおやつ",
   "alternateName":"aceri no oyatsu",
-  "description":"オリジナルストーリー「月暈の物語」から生まれる焼菓子・クッキー缶の製造・販売。甘味は主にメープルシュガー、小麦粉は愛知県産「きぬあかり」を使用。",
+  "description":"オリジナルストーリー「月暈の物語」から生まれる焼菓子・クッキー缶の製造・販売。甘味は主にメイプルシュガー、小麦粉は愛知県産「きぬあかり」を使用。",
   "url":"https://shogohukunaga.github.io/aceri/shop.html",
   "image":"https://shogohukunaga.github.io/aceri/image/shop-photo.jpg",
   "foundingDate":"2021-09-01",
@@ -1189,13 +1202,19 @@ main .block{overflow:hidden;}
     "addressCountry":"JP"
   },
   "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Wednesday","https://schema.org/Saturday"],"opens":"13:00","closes":"17:00","description":"毎月第1・第3の水曜日および土曜日のみ営業。イベント出店等により臨時休業する場合があります。"}
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Wednesday","https://schema.org/Saturday"],"opens":"13:00","closes":"17:00","description":"毎月第1週・第3週の水曜日および土曜日のみ営業。イベント出店等により臨時休業する場合があります。"}
   ],
+  "memberOf":{
+    "@type":"Organization",
+    "name":"一般社団法人日本マタニティフード協会",
+    "url":"https://maternity-food.org/"
+  },
   "sameAs":[
     "https://www.instagram.com/aceri_no_oyatsu",
     "https://lin.ee/QGTHKM1",
     "https://halotales.stores.jp/",
-    "https://halotales.thebase.in/"
+    "https://halotales.thebase.in/",
+    "https://maternity-food.org/member-store/aceri-no-oyatsu/"
   ]
 }
 </script>
@@ -1214,11 +1233,12 @@ main .block{overflow:hidden;}
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"営業日と営業時間は？","acceptedAnswer":{"@type":"Answer","text":"毎月第1・第3の水曜日と土曜日、13:00〜17:00に営業しています。イベント出店等により臨時休業する場合があります。"}},
-    {"@type":"Question","name":"お店はどこにありますか？","acceptedAnswer":{"@type":"Answer","text":"〒446-0045 愛知県安城市横山町石ナ曽根181-3です。"}},
+    {"@type":"Question","name":"営業日と営業時間は？","acceptedAnswer":{"@type":"Answer","text":"毎月第1週・第3週の水曜日と土曜日、13:00〜17:00に営業しています。イベント出店等により臨時休業する場合があります。"}},
+    {"@type":"Question","name":"お店はどこにありますか？","acceptedAnswer":{"@type":"Answer","text":"〒446-0045 愛知県安城市横山町石ナ曽根181-3です。駐車場は工房前にございます。"}},
     {"@type":"Question","name":"オンラインで購入できますか？","acceptedAnswer":{"@type":"Answer","text":"ネットショップ「halotales」（STORES・BASE）でご購入いただけます。"}},
-    {"@type":"Question","name":"どんな材料を使っていますか？","acceptedAnswer":{"@type":"Answer","text":"甘味は主にメープルシュガー、小麦粉は愛知県産「きぬあかり」を使用しています。"}},
-    {"@type":"Question","name":"お菓子のモチーフは何ですか？","acceptedAnswer":{"@type":"Answer","text":"オリジナルストーリー「月暈の物語」の登場キャラクターや世界をモチーフにしています。"}}
+    {"@type":"Question","name":"どんな材料を使っていますか？","acceptedAnswer":{"@type":"Answer","text":"甘味は主にメイプルシュガー、小麦粉は愛知県産「きぬあかり」を使用しています。"}},
+    {"@type":"Question","name":"駐車場はありますか？","acceptedAnswer":{"@type":"Answer","text":"工房前にとめていただけます。カーナビは「愛知県安城市横山町石ナ曽根181-3」でご検索ください。"}},
+    {"@type":"Question","name":"支払方法は何が使えますか？","acceptedAnswer":{"@type":"Answer","text":"工房のお店では現金・PayPay・d払いがご利用いただけます。"}}
   ]
 }
 </script>
@@ -1313,7 +1333,7 @@ main .block{overflow:hidden;}
           <span class="line">愛知県安城市</span><span class="line">横山町石ナ曽根181-3</span>
         </h2>
         <p class="hours-strong" style="margin-top:22px">
-          <span class="line">毎月第1・3 水曜日・土曜日</span>
+          <span class="line">毎月 第1週・第3週の 水曜日・土曜日</span>
           <span class="line">13:00〜17:00 オープン</span>
         </p>
         <p class="note"><span class="w">※イベント出店等により</span><span class="w">臨時休業する場合があります。</span></p>
@@ -1326,7 +1346,7 @@ main .block{overflow:hidden;}
             </span>
           </a>
           <a class="btn" href="#route">
-            <span class="lbl">道順を見る</span>
+            <span class="lbl">お車での行き方</span>
             <span class="arrowCircle" aria-hidden="true">
               <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
               <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
@@ -1349,7 +1369,7 @@ main .block{overflow:hidden;}
      ============================================================ -->
 <section class="block bg-b" id="hours" aria-labelledby="hours-h">
   <span class="float sh-c2 bob2 in-l" data-px="-90" aria-hidden="true"><span class="float-in"><img src="image/illust-04.png" alt="" width="320" height="370" loading="lazy"></span></span>
-  <span class="float sh-bear bob in-r" style="--i:1" data-px="-70" aria-hidden="true"><span class="float-in"><img src="image/book-bear-1.png" alt="" width="362" height="786" loading="lazy"></span></span>
+  <span class="float sh-bear bob in-r" style="--i:1" data-px="-70" aria-hidden="true"><span class="float-in"><img src="image/book-bear-2.png" alt="" width="420" height="635" loading="lazy"></span></span>
 
   <div class="wrap">
     <div class="sec-head">
@@ -1362,7 +1382,7 @@ main .block{overflow:hidden;}
     <div class="cal anim">
       <div class="calwrap" id="cal">
         <noscript>
-          <p class="prose">毎月<b>第1・第3の水曜日</b>と<b>第1・第3の土曜日</b>、13:00〜17:00に営業しています。</p>
+          <p class="prose">毎月<b>第1週・第3週の水曜日</b>と<b>土曜日</b>、13:00〜17:00に営業しています。</p>
         </noscript>
       </div>
       <p class="cal-legend"><span><i></i>営業日（13:00〜17:00）</span></p>
@@ -1399,6 +1419,8 @@ main .block{overflow:hidden;}
     </div>
 
     <div class="route">
+      <!-- ★ 「公園からお越しの方へ」は、隣の公園が開園するまで非表示（2026-09-10 先方指定）。
+           開園したらこのコメントを外して復活させる。文中の [要記入] は開園後に埋める。
       <div class="card anim" style="--i:0">
         <div class="hd">
           <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
@@ -1407,34 +1429,22 @@ main .block{overflow:hidden;}
         </div>
         <p class="prose">工房のすぐ近くに、公園が整備される予定です。公園から歩いてすぐの場所にありますので、遊んだ帰りにお立ち寄りいただけます。</p>
         <ol class="steps mt-m">
-          <li>公園の出口から、まずどちらへ進むか <span class="req">[要記入]</span></li>
-          <li>目印になる建物・曲がり角 <span class="req">[要記入]</span></li>
-          <li>工房の外観の目印（看板・のぼり・扉の色など） <span class="req">[要記入]</span></li>
-        </ol>      </div>
+          <li>公園の出口から、まずどちらへ進むか [要記入]</li>
+          <li>目印になる建物・曲がり角 [要記入]</li>
+          <li>工房の外観の目印（看板・のぼり・扉の色など） [要記入]</li>
+        </ol>
+      </div>
+      -->
 
-      <div class="card anim" style="--i:1">
+      <div class="card anim" style="--i:0">
         <div class="hd">
           <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v3M20 16v3M3.5 16h17l-1.4-5.2A2.5 2.5 0 0 0 16.7 9H7.3a2.5 2.5 0 0 0-2.4 1.8L3.5 16Z"/><circle cx="7" cy="13.5" r=".9"/><circle cx="17" cy="13.5" r=".9"/></svg></span>
           <b>お車でお越しの方へ</b>
         </div>
         <dl class="deflist wide">
-          <div class="row"><dt>駐車場</dt><dd><span class="req">[要記入]</span>（有無・台数）</dd></div>
-          <div class="row"><dt>とめる場所</dt><dd><span class="req">[要記入]</span>（工房の前・近隣のコインパーキング など）</dd></div>
-          <div class="row"><dt>目印</dt><dd><span class="req">[要記入]</span></dd></div>
+          <div class="row"><dt>駐車場</dt><dd>工房前</dd></div>
         </dl>
         <p class="note mt-s">カーナビをご利用の場合は「愛知県安城市横山町石ナ曽根181-3」でご検索ください。</p>
-      </div>
-
-      <div class="card anim" style="--i:2">
-        <div class="hd">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="3.5" width="12" height="13" rx="2.6"/><path d="M6 12h12M8.5 20l-2 1.5M15.5 20l2 1.5M9 16.5v3M15 16.5v3"/><circle cx="9" cy="14.2" r=".8"/><circle cx="15" cy="14.2" r=".8"/></svg></span>
-          <b>電車・バスでお越しの方へ</b>
-        </div>
-        <dl class="deflist wide">
-          <div class="row"><dt>最寄り駅</dt><dd><span class="req">[要記入]</span></dd></div>
-          <div class="row"><dt><span class="w">駅からの</span><span class="w">所要</span></dt><dd><span class="req">[要記入]</span></dd></div>
-          <div class="row"><dt>バス</dt><dd><span class="req">[要記入]</span></dd></div>
-        </dl>
       </div>
     </div>
   </div>
@@ -1444,7 +1454,7 @@ main .block{overflow:hidden;}
 <div class="px-photo">
   <img src="image/photo-10.jpg" alt="アチェリのおやつの焼菓子" width="1400" height="933" loading="lazy">
   <div class="cap">
-    <p><span class="line">遊んだ帰りに、</span><span class="line">おやつをひとつ。</span></p>
+    <p><span class="line">おでかけの帰りに、</span><span class="line">おやつをひとつ。</span></p>
   </div>
 </div>
 
@@ -1490,8 +1500,19 @@ main .block{overflow:hidden;}
     <div class="ways">
       <div class="way anim" style="--i:0">
         <h3><span class="en-s">Partner Shops</span>委託販売店</h3>
-        <p>お取り扱いいただいているお店の名前・住所・営業時間 <span class="req">[クライアント確認]</span></p>
-        <p class="note">お店の名前をいただければ、地図つきの一覧にしてこちらへ掲載します。</p>
+        <ul class="waylist">
+          <li>
+            <b>アピタ安城南店</b>
+            <span class="sub">わくわく広場</span>
+            <span class="ad"><span class="w">愛知県安城市桜井町城向</span><span class="w">2丁目9番地36</span><span class="w">アピタ安城南 1F</span></span>
+            <a href="https://wakuwaku-hiroba.com/shop/%E3%82%8F%E3%81%8F%E3%82%8F%E3%81%8F%E5%BA%83%E5%A0%B4%E3%80%80%E3%82%A2%E3%83%94%E3%82%BF%E5%AE%89%E5%9F%8E%E5%8D%97/" target="_blank" rel="noopener">お店の情報を見る</a>
+          </li>
+          <li>
+            <b><span class="w">でんまるしぇ・</span><span class="w">でんまぁと安城中部</span></b>
+            <span class="ad"><span class="w">愛知県安城市安城町</span><span class="w">西広畔1-1</span></span>
+            <a href="https://www.jaac.or.jp/agriculture/sanchoku/anjochubu/index.html" target="_blank" rel="noopener">お店の情報を見る</a>
+          </li>
+        </ul>
       </div>
       <div class="way anim" style="--i:1">
         <h3><span class="en-s">Marche</span>マルシェ・出店</h3>
@@ -1500,8 +1521,14 @@ main .block{overflow:hidden;}
       </div>
       <div class="way anim" style="--i:2">
         <h3><span class="en-s">Furusato</span>ふるさと納税</h3>
-        <p>自治体名・返礼品の内容・申込先サイト <span class="req">[クライアント確認]</span></p>
-        <p class="note">申込先のURLをいただければ、直接お申し込みいただけるボタンを設置します。</p>
+        <p><span class="w">愛知県安城市の返礼品として</span><span class="w">お選びいただけます。</span></p>
+        <ul class="waylist">
+          <li>
+            <b><span class="w">願い星をイメージした</span><span class="w">可愛い焼菓子セット</span><span class="w">（7袋）</span></b>
+            <a href="https://www.furusato-tax.jp/product/detail/23212/6035482" target="_blank" rel="noopener">ふるさとチョイスで見る</a>
+            <a href="https://www.satofull.jp/products/detail.php?product_id=1469760" target="_blank" rel="noopener">さとふるで見る</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1521,17 +1548,18 @@ main .block{overflow:hidden;}
         <dl class="deflist wide">
           <div class="row"><dt>屋号</dt><dd>アチェリのおやつ</dd></div>
           <div class="row"><dt>所在地</dt><dd>〒446-0045<br>愛知県安城市横山町石ナ曽根181-3</dd></div>
-          <div class="row"><dt>営業日</dt><dd>毎月第1・3 水曜日・土曜日<br><span class="note">※イベント出店等により臨時休業あり</span></dd></div>
+          <div class="row"><dt>営業日</dt><dd>毎月 第1週・第3週の 水曜日・土曜日<br><span class="note">※イベント出店等により臨時休業あり</span></dd></div>
           <div class="row"><dt>営業時間</dt><dd>13:00〜17:00</dd></div>
           <div class="row"><dt>設立</dt><dd>2021年9月1日</dd></div>
+          <div class="row"><dt>加盟団体</dt><dd><a href="https://maternity-food.org/member-store/aceri-no-oyatsu/" target="_blank" rel="noopener"><span class="w">一般社団法人</span><span class="w">日本マタニティフード協会</span></a><br><span class="note">2025年3月13日 加盟</span></dd></div>
         </dl>
       </div>
       <div class="anim" style="--i:1">
         <dl class="deflist wide">
           <div class="row"><dt>事業内容</dt><dd>焼菓子の製造・販売　それに付帯する一切の業務</dd></div>
-          <div class="row"><dt>お電話</dt><dd><span class="req">[クライアント確認]</span></dd></div>
-          <div class="row"><dt>駐車場</dt><dd><span class="req">[要記入]</span></dd></div>
-          <div class="row"><dt>支払方法</dt><dd><span class="req">[要記入]</span></dd></div>
+          <!-- 電話番号は掲載しない（2026-09-10 先方指定）。連絡はInstagram・公式LINE・フォームへ集約 -->
+          <div class="row"><dt>駐車場</dt><dd>工房前</dd></div>
+          <div class="row"><dt>支払方法</dt><dd><span class="w">現金・PayPay・</span><span class="w">d払い</span></dd></div>
           <div class="row"><dt>ネットショップ</dt><dd><a href="https://halotales.stores.jp/" target="_blank" rel="noopener">halotales（STORES）</a><br><a href="https://halotales.thebase.in/" target="_blank" rel="noopener">halotales（BASE）</a></dd></div>
         </dl>
       </div>
@@ -1551,11 +1579,11 @@ main .block{overflow:hidden;}
     <div class="faq anim">
       <details>
         <summary>営業日と営業時間は？</summary>
-        <p class="a">毎月第1・第3の水曜日と土曜日、13:00〜17:00に営業しています。イベント出店等により臨時休業する場合がありますので、お出かけ前に Instagram もご確認ください。</p>
+        <p class="a">毎月第1週・第3週の水曜日と土曜日、13:00〜17:00に営業しています。イベント出店等により臨時休業する場合がありますので、お出かけ前に Instagram もご確認ください。</p>
       </details>
       <details>
         <summary>お店はどこにありますか？</summary>
-        <p class="a">〒446-0045 愛知県安城市横山町石ナ曽根181-3です。近くに整備される公園から歩いてすぐの場所にあります。</p>
+        <p class="a">〒446-0045 愛知県安城市横山町石ナ曽根181-3です。駐車場は工房前にございます。</p>
       </details>
       <details>
         <summary>オンラインで購入できますか？</summary>
@@ -1563,14 +1591,17 @@ main .block{overflow:hidden;}
       </details>
       <details>
         <summary>どんな材料を使っていますか？</summary>
-        <p class="a">甘味は主にメープルシュガー、小麦粉は愛知県産「きぬあかり」を使用しています。</p>
+        <p class="a">甘味は主にメイプルシュガー、小麦粉は愛知県産「きぬあかり」を使用しています。</p>
       </details>
       <details>
-        <summary>お菓子のモチーフは何ですか？</summary>
-        <p class="a"><span><span class="w">オリジナルストーリー「月暈の物語」の</span><span class="w">登場キャラクターや世界を</span><span class="w">モチーフにしています。</span></span></p>
+        <summary>駐車場はありますか？</summary>
+        <p class="a"><span><span class="w">工房前にとめていただけます。</span><span class="w">カーナビは</span><span class="w">「愛知県安城市横山町石ナ曽根181-3」で</span><span class="w">ご検索ください。</span></span></p>
+      </details>
+      <details>
+        <summary>支払方法は何が使えますか？</summary>
+        <p class="a"><span><span class="w">工房のお店では</span><span class="w">現金・PayPay・d払いが</span><span class="w">ご利用いただけます。</span></span></p>
       </details>
     </div>
-    <p class="note center mt-m">駐車場・支払方法・送料についてのご質問は、内容が決まりしだい追加します。<span class="req">[要記入]</span></p>
   </div>
 </section>
 
@@ -1584,8 +1615,8 @@ main .block{overflow:hidden;}
       <span class="en anim" style="--i:1">Contact</span>
       <h2 class="anim" style="--i:2" id="contact-h">お問い合わせ</h2>
       <p class="lead anim" style="--i:3">
-        <span class="line">商品のご購入に関するお問い合わせは、</span>
-        <span class="line"><span class="w">Instagramまたは公式LINE</span><span class="w">よりお願いいたします。</span></span>
+        <span class="line"><span class="w">商品のご購入、クッキー教室、</span><span class="w">取材やご出店のご依頼など、</span></span>
+        <span class="line">どんなことでもこちらから承ります。</span>
       </p>
     </div>
 
@@ -1621,17 +1652,11 @@ main .block{overflow:hidden;}
     </div>
 
     <div class="mt-m center">
-      <p class="note"><span class="w">お急ぎの場合は、</span><span class="w">こちらからもご連絡いただけます。</span></p>
+      <p class="note"><span class="w">お急ぎの場合は、</span><span class="w">Instagram のDMが一番早くお返事できます。</span></p>
       <div class="row" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:16px">
-        <a class="btn" href="https://lin.ee/QGTHKM1" target="_blank" rel="noopener">
-          <span class="lbl">公式LINE</span>
-          <span class="arrowCircle" aria-hidden="true">
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-            <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
-          </span>
-        </a>
+        <!-- お急ぎの窓口は Instagram のみ（2026-09-10 先方指定で公式LINEのボタンを削除） -->
         <a class="btn" href="https://www.instagram.com/aceri_no_oyatsu" target="_blank" rel="noopener">
-          <span class="lbl">Instagram</span>
+          <span class="lbl">Instagram のDM</span>
           <span class="arrowCircle" aria-hidden="true">
             <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
             <span><svg viewBox="0 0 12 12"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span>
@@ -1655,7 +1680,7 @@ main .block{overflow:hidden;}
       <span class="line">おやつは、ネットショップと</span>
       <span class="line">工房のお店でお求めいただけます。</span>
     </h2>
-    <p class="lead anim" style="--i:1"><span class="w">毎月第1・3 水曜日・土曜日 13:00〜17:00｜</span><span class="w">愛知県安城市横山町石ナ曽根181-3</span></p>
+    <p class="lead anim" style="--i:1"><span class="w">毎月 第1週・第3週の 水曜日・土曜日 13:00〜17:00｜</span><span class="w">愛知県安城市横山町石ナ曽根181-3</span></p>
     <div class="row anim" style="--i:2">
       <a class="btn" href="https://halotales.stores.jp/" target="_blank" rel="noopener">
         <span class="lbl">STORESで買う</span>
@@ -1677,7 +1702,7 @@ main .block{overflow:hidden;}
       <a href="https://www.instagram.com/aceri_no_oyatsu" target="_blank" rel="noopener"><img src="image/icon-sns-02.png" alt="" width="355" height="354" aria-hidden="true">Instagram</a>
       <a href="shop.html#contact">メールでお問い合わせ</a>
     </div>
-    <p class="lead anim" style="--i:4;margin-top:26px"><span class="w">商品購入に関するお問い合わせは、</span><span class="w">Instagramまたは公式LINE</span><span class="w">よりお願いいたします。</span></p>
+    <p class="lead anim" style="--i:4;margin-top:26px"><span class="w">ご購入・クッキー教室・取材のご依頼など、</span><span class="w">お問い合わせは Instagram</span><span class="w">または公式LINEより承ります。</span></p>
   </div>
 </section>
 
@@ -1689,7 +1714,7 @@ main .block{overflow:hidden;}
     <div class="top">
       <div>
         <img class="flogo" src="image/logo.png" alt="アチェリのおやつ" width="800" height="241" loading="lazy">
-        <p class="addr">〒446-0045 愛知県安城市横山町石ナ曽根181-3<br>毎月第1・3 水曜日・土曜日 13:00〜17:00</p>
+        <p class="addr">〒446-0045 愛知県安城市横山町石ナ曽根181-3<br>毎月 第1週・第3週の 水曜日・土曜日 13:00〜17:00</p>
         <div class="fsns">
           <a href="https://www.instagram.com/aceri_no_oyatsu" target="_blank" rel="noopener" aria-label="Instagram"><img src="image/icon-sns-02.png" alt="Instagram" width="355" height="354" loading="lazy"></a>
           <a href="https://lin.ee/QGTHKM1" target="_blank" rel="noopener" aria-label="公式LINE"><img src="image/icon-line.png" alt="公式LINE" width="171" height="171" loading="lazy"></a>
@@ -1946,27 +1971,40 @@ main .block{overflow:hidden;}
   'use strict';
 
   /* ---------- 今月と来月の営業日カレンダー ----------
-     「毎月第1・3 水曜日・土曜日」という営業日のきまりから計算して描く。
+     営業日のきまり（2026-09-10 先方指定）:
+       ・週は【月曜始まり】
+       ・【1日を含む週を第1週】として数える
+       ・第1週と第3週の、水曜日と土曜日が営業日
+     ★ 「その月で1回目の水曜日」ではないので注意。
+        例) 2026年10月は1日が木曜なので、第1週は 9/28(月)〜10/4(日)。
+            水曜営業は 10/7 でも 10/21 でもなく、第3週の【10/14】になる。
+            土曜営業は第1週の 10/3 と第3週の 10/17。
      臨時休業は反映されないため、画面上にその旨を明記している。 */
   var host = document.getElementById('cal');
   if (host){
-    var WD = ['日','月','火','水','木','金','土'];
+    var WD = ['月','火','水','木','金','土','日'];          /* 月曜始まりの並び */
 
-    function nth(d){ return Math.floor((d - 1) / 7) + 1; }   /* 月内で何回目のその曜日か */
+    /* その月の1日が、月曜始まりの週で何列目か（0=月 … 6=日） */
+    function offset(y, m){ return (new Date(y, m, 1).getDay() + 6) % 7; }
+
+    /* 月曜始まり・1日を含む週を第1週として、d が第何週か */
+    function weekOf(y, m, d){ return Math.floor((d - 1 + offset(y, m)) / 7) + 1; }
+
     function isOpen(y, m, d){
       var w = new Date(y, m, d).getDay();
       if (w !== 3 && w !== 6) return false;                  /* 水曜・土曜のみ */
-      var n = nth(d);
-      return n === 1 || n === 3;                             /* 第1・第3 */
+      var n = weekOf(y, m, d);
+      return n === 1 || n === 3;                             /* 第1週・第3週 */
     }
 
     function month(y, m, today){
-      var first = new Date(y, m, 1).getDay();
+      var first = offset(y, m);                              /* 先頭の空きマス数 */
       var last  = new Date(y, m + 1, 0).getDate();
       var h = '<div class="calm"><p class="ym">' + y + '年' + (m + 1) + '月</p>';
       h += '<table><caption class="sr">' + y + '年' + (m + 1) + '月の営業日</caption><thead><tr>';
       for (var i = 0; i < 7; i++){
-        h += '<th scope="col" class="' + (i === 0 ? 'sun' : i === 6 ? 'sat' : '') + '">' + WD[i] + '</th>';
+        /* 月曜始まりなので 土=5・日=6 */
+        h += '<th scope="col" class="' + (i === 6 ? 'sun' : i === 5 ? 'sat' : '') + '">' + WD[i] + '</th>';
       }
       h += '</tr></thead><tbody><tr>';
       var col = 0, d;
@@ -2001,7 +2039,7 @@ main .block{overflow:hidden;}
     form.addEventListener('submit', function(e){
       e.preventDefault();
       fmsg.textContent = '送信先が未設定のため、現在このフォームからは送信できません。'
-                       + 'お手数ですが公式LINEまたはInstagramよりご連絡ください。';
+                       + 'お手数ですがInstagramのDM、または公式LINEよりご連絡ください。';
       fmsg.style.color = '#8A5F52';
     });
   }

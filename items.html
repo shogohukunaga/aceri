@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>焼菓子のご紹介｜焼菓子屋 アチェリのおやつ（愛知県安城市）</title>
-<meta name="description" content="愛知県安城市の焼菓子屋「アチェリのおやつ」の商品一覧。しあわせキノコのクッキー、ドラゴンのたまごのクッキー、季節のキノコ型マフィン、パウンドケーキ、限定クッキー缶など。甘味は主にメープルシュガー、小麦粉は愛知県産「きぬあかり」を使用しています。">
+<meta name="description" content="愛知県安城市の焼菓子屋「アチェリのおやつ」の焼菓子を一部ご紹介。しあわせキノコのクッキー（ミニ・キング）、季節のキノコ型マフィン、季節のパウンドケーキ、フルムーン（満月）の紅茶クッキー、みんなの願い星のクッキー、限定クッキー缶など。甘味は主にメイプルシュガー、小麦粉は愛知県産「きぬあかり」を使用しています。">
 <link rel="canonical" href="https://shogohukunaga.github.io/aceri/items.html">
 <link rel="icon" href="image/logo-square.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="焼菓子のご紹介｜焼菓子屋 アチェリのおやつ（愛知県安城市）">
-<meta property="og:description" content="しあわせキノコのクッキー、ドラゴンのたまご、季節のマフィン。物語のかけらをかたちにした焼菓子をご紹介します。">
+<meta property="og:description" content="しあわせキノコのクッキー、季節のマフィン、みんなの願い星。物語のかけらをかたちにした焼菓子を一部ご紹介します。">
 <meta property="og:image" content="https://shogohukunaga.github.io/aceri/image/logo-square.png">
 <meta property="og:url" content="https://shogohukunaga.github.io/aceri/items.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -1133,6 +1133,26 @@ main .block{overflow:hidden;}
 .tincard p{margin-top:13px;font-size:13.5px;line-height:2.15;color:var(--text-sub-on-dark);}
 .tincard .price{margin-top:14px;font-size:12.5px;color:var(--text-sub-on-dark);}
 
+/* ---- 日本マタニティフード協会 加盟店バナー ----
+   文字と公式「マタニティフード認定」マークが焼き込まれた1枚画像。
+   ★ 表示幅がそのまま文字サイズになる。原寸1536px基準で本文が31pxなので、
+     本文の実寸 = 表示幅 × 31/1536。700px で 14.1px 相当になる。
+     （2026-09-09版のバナーは本文48pxで、620pxでも19.4px相当あった）
+   意味は alt にすべて持たせる（画像内の文字は読み上げられないため）。
+
+   ★ .mfobn-row は .wrap の外（section 直下）に置くこと。
+     SPで本文幅まで縮むと画像内の文字が10px相当まで落ちるため、
+     max-width を外してセクション幅いっぱいに広げる必要がある。
+     .wrap の中だと --container の値（昼88% / 夜の紙の中は92%）に
+     縛られ、負のマージンで打ち消すと夜モードでずれる。 */
+.mfobn-row{margin-top:clamp(38px,4.4vw,64px);position:relative;z-index:4;}
+.mfobn{display:block;max-width:700px;margin-inline:auto;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);background:var(--pink-1);
+  transition:transform .6s var(--ease-out-expo),box-shadow .6s var(--ease-out-expo);}
+.mfobn img{width:100%;height:auto;display:block;}
+.mfobn:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(206,130,121,.16);}
+.mfobn:focus-visible{outline:2px solid var(--pink-5);outline-offset:3px;}
+
 /* ---- 浮遊するキャラ ---- */
 .it-c1{width:clamp(76px,9.5vw,164px);left:-1%;top:9%;}
 .it-c2{width:clamp(70px,8.5vw,146px);right:-1%;top:34%;}
@@ -1148,6 +1168,10 @@ main .block{overflow:hidden;}
 
 @media (max-width:1024px){ .points{grid-template-columns:1fr;} }
 @media (max-width:767px){
+  /* バナーは文字が焼き込まれた画像なので、本文幅のままだと画像内の文字が
+     10px相当まで落ちる。セクション幅いっぱいに広げて12px相当を確保する。 */
+  .mfobn{max-width:none;border-radius:0;border-left:0;border-right:0;}
+  .mfobn:hover{transform:none;box-shadow:none;}
   .tincard{grid-template-columns:1fr;gap:16px;}
   .tincard:nth-child(even){direction:ltr;}
   .it-c1{width:62px;left:-1%;top:7%;}
@@ -1174,20 +1198,14 @@ main .block{overflow:hidden;}
 {
   "@context":"https://schema.org",
   "@type":"ItemList",
-  "name":"アチェリのおやつ 焼菓子一覧",
+  "name":"アチェリのおやつ 焼菓子（一部）",
   "itemListElement":[
-    {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"季節のキノコ型マフィン","description":"安城市の特産物や季節の旬を使って作るキノコ型の特製マフィン。","image":"https://shogohukunaga.github.io/aceri/image/item-muffin.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"320","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"季節のパウンドケーキ","description":"安城市の特産物や季節の旬を使って作る特製パウンドケーキ。","image":"https://shogohukunaga.github.io/aceri/image/item-poundcake.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"270","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"しあわせキノコのクッキー(キング)","description":"魔女の目をあざむくために作った、実寸大しあわせキノコのクッキー。","image":"https://shogohukunaga.github.io/aceri/image/item-kinoko-king.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"200","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"しあわせキノコのクッキー(ミニ)","description":"当店1番の人気クッキー！実寸大よりもミニサイズなので、3枚入り。","image":"https://shogohukunaga.github.io/aceri/image/item-kinoko-mini.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"280","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"しあわせキノコとリンゴのクッキー","description":"ミニサイズキノコと好物のリンゴが一緒に入ったメイプル味のクッキー。","image":"https://shogohukunaga.github.io/aceri/image/item-kinoko-apple.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"350","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"リンゴのクッキー","description":"キノコ達の大好物のリンゴ型のクッキー。形はリンゴでもメイプル味。","image":"https://shogohukunaga.github.io/aceri/image/item-apple.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"300","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":7,"item":{"@type":"Product","name":"回収屋と回収バッグのクッキー","description":"HALO物の物語に登場する、回収屋さんと回収バッグのクッキー。","image":"https://shogohukunaga.github.io/aceri/image/item-collector.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"400","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":8,"item":{"@type":"Product","name":"コック帽のキノコのクッキー","description":"ロゴにも登場するコック帽のキノコのクッキー。味は当日のお楽しみ。","image":"https://shogohukunaga.github.io/aceri/image/item-chefhat.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"270","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":9,"item":{"@type":"Product","name":"ドラゴンのウロコのクッキー","description":"HALOの物語に登場するドラゴンのウロコのクッキー。コーヒー味。","image":"https://shogohukunaga.github.io/aceri/image/item-dragon-scale.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"250","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":10,"item":{"@type":"Product","name":"ドラゴンのたまごのクッキー","description":"HALOの物語に登場するドラゴンの卵のクッキー。抹茶味。","image":"https://shogohukunaga.github.io/aceri/image/item-dragon-egg.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"250","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":11,"item":{"@type":"Product","name":"フルムーン(満月)のクッキー","description":"HALOの世界のフルムーン(満月)をモチーフにした紅茶味のクッキー。","image":"https://shogohukunaga.github.io/aceri/image/item-fullmoon.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"360","priceCurrency":"JPY"}}},
-    {"@type":"ListItem","position":12,"item":{"@type":"Product","name":"みんなの願い星のクッキー","description":"HALOの物語に登場する、願い星のクッキー。味は色々、願いも色々。","image":"https://shogohukunaga.github.io/aceri/image/item-wishstar.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"360","priceCurrency":"JPY"}}}
+    {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"しあわせキノコのクッキー(ミニ)","description":"当店1番の人気クッキー！実寸大よりもミニサイズなので、3枚入り。","image":"https://shogohukunaga.github.io/aceri/image/item-kinoko-mini.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"280","priceCurrency":"JPY"}}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"しあわせキノコのクッキー(キング)","description":"魔女の目をあざむくために作った、実寸大しあわせキノコのクッキー。","image":"https://shogohukunaga.github.io/aceri/image/item-kinoko-king.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"200","priceCurrency":"JPY"}}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"季節のキノコ型マフィン","description":"安城市の特産物や季節の旬を使って作るキノコ型の特製マフィン。","image":"https://shogohukunaga.github.io/aceri/image/item-muffin.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"320","priceCurrency":"JPY"}}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"季節のパウンドケーキ","description":"安城市の特産物や季節の旬を使って作る特製パウンドケーキ。","image":"https://shogohukunaga.github.io/aceri/image/item-poundcake.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"270","priceCurrency":"JPY"}}},
+    {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"フルムーン(満月)の紅茶クッキー","description":"HALOの世界のフルムーン(満月)をモチーフにしたクッキー。","image":"https://shogohukunaga.github.io/aceri/image/item-fullmoon.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"360","priceCurrency":"JPY"}}},
+    {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"みんなの願い星のクッキー","description":"HALOの物語に登場する、願い星のクッキー。味は色々、願いも色々。","image":"https://shogohukunaga.github.io/aceri/image/item-wishstar.jpg","brand":{"@type":"Brand","name":"アチェリのおやつ"},"offers":{"@type":"Offer","price":"360","priceCurrency":"JPY"}}}
   ]
 }
 </script>
@@ -1284,9 +1302,13 @@ main .block{overflow:hidden;}
       <i></i>
     </div>
     <p class="anim mt-m" style="--i:3">
-      <span class="line"><span class="w">しあわせキノコ、ドラゴンのたまご、</span><span class="w">みんなの願い星。</span></span>
+      <span class="line"><span class="w">しあわせキノコ、ドラゴンのタマゴ、</span><span class="w">みんなの願い星。</span></span>
       <span class="line"><span class="w">「月暈（ハロー）の物語」に</span><span class="w">出てくるものを、</span></span>
       <span class="line">そのままのかたちで焼いています。</span>
+    </p>
+    <p class="anim mt-s" style="--i:4">
+      <span class="line"><span class="w">物語のキャラクターのほかにも、</span><span class="w">季節の実りや行事に合わせた</span></span>
+      <span class="line"><span class="w">クッキーを</span><span class="w">その時々でお作りしています。</span></span>
     </p>
   </div>
 </section>
@@ -1296,7 +1318,7 @@ main .block{overflow:hidden;}
      ============================================================ -->
 <section class="block bg-b" id="points" aria-labelledby="points-h">
   <span class="float it-drop1 wander in-t" data-px="-46" aria-hidden="true"><span class="float-in"><img src="image/book-drop-5.png" alt="" width="220" height="181" loading="lazy"></span></span>
-  <span class="float it-bear bob in-r" style="--i:1" data-px="-64" aria-hidden="true"><span class="float-in"><img src="image/book-bear-1.png" alt="" width="362" height="786" loading="lazy"></span></span>
+  <span class="float it-bear bob in-r" style="--i:1" data-px="-64" aria-hidden="true"><span class="float-in"><img src="image/book-bear-2.png" alt="" width="420" height="635" loading="lazy"></span></span>
 
   <div class="wrap">
     <div class="sec-head">
@@ -1314,8 +1336,8 @@ main .block{overflow:hidden;}
       <div class="point anim" style="--i:1">
         <span class="no">Point 02</span>
         <img class="ic" src="image/icon-11.png" alt="" width="400" height="346" loading="lazy" aria-hidden="true">
-        <h3>甘味は主に<br>メープルシュガー</h3>
-        <p>焼菓子の甘味は、主にメープルシュガーを使用。身体に優しい材料を選んでいます。</p>
+        <h3>甘味は主に<br>メイプルシュガー</h3>
+        <p>焼菓子の甘味は、主にメイプルシュガーを使用。身体に優しい材料を選んでいます。</p>
       </div>
       <div class="point anim" style="--i:2">
         <span class="no">Point 03</span>
@@ -1324,6 +1346,31 @@ main .block{overflow:hidden;}
         <p>食材は愛知県産小麦粉「きぬあかり」を使用することで、地域貢献を目指しています。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     日本マタニティフード協会 加盟店
+     ------------------------------------------------------------
+     見出し＋公式マーク入りバナーのみ（2026-09-14 先方指定でバナー下の説明文を削除）。
+     バナー内の文字は alt にすべて持たせてある。
+     ============================================================ -->
+<section class="block bg-a" id="maternity" aria-labelledby="maternity-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en anim" style="--i:0">Membership</span>
+      <h2 class="anim" style="--i:1" id="maternity-h">
+        <span class="line">日本マタニティフード協会</span><span class="line">加盟店</span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- SPでセクション幅いっぱいに広げるため、バナーだけ .wrap の外に置いている -->
+  <div class="mfobn-row anim">
+    <a class="mfobn" href="https://maternity-food.org/member-store/aceri-no-oyatsu/" target="_blank" rel="noopener">
+      <img src="image/mfo-banner.jpg" width="1400" height="933" loading="lazy" decoding="async"
+           alt="マタニティフード認定マーク。一般社団法人 日本マタニティフード協会 加盟店。妊娠期・授乳期の方にも召し上がっていただけるよう、協会の認定基準を満たした焼菓子を登録しています。協会の加盟情報ページを見る。">
+    </a>
   </div>
 </section>
 
@@ -1340,8 +1387,12 @@ main .block{overflow:hidden;}
     <div class="sec-head">
       <img class="icon anim" style="--i:0" src="image/icon-03.png" alt="" width="400" height="346" loading="lazy" aria-hidden="true">
       <span class="en anim" style="--i:1">Line up</span>
-      <h2 class="anim" style="--i:2" id="items-h">焼菓子のご紹介</h2>
-      <p class="lead anim" style="--i:3">価格はすべて税込です。</p>
+      <h2 class="anim" style="--i:2" id="items-h">焼菓子の一部紹介</h2>
+      <p class="lead anim" style="--i:3">
+        <span class="line"><span class="w">こちらは通年のお菓子の一部です。</span><span class="w">このほかに、季節の実りや</span></span>
+        <span class="line"><span class="w">ハロウィン・クリスマスなどの行事に合わせた</span><span class="w">クッキーもお作りしています。</span></span>
+        <span class="line">価格はすべて税込です。</span>
+      </p>
     </div>
 
     <div class="item-grid">
@@ -1362,22 +1413,6 @@ main .block{overflow:hidden;}
         </div>
       </article>
       <article class="item anim" style="--i:2">
-        <div class="ph"><img src="image/item-kinoko-apple.jpg" alt="しあわせキノコとリンゴのクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>しあわせキノコと<br>リンゴのクッキー</h3>
-          <p class="desc"><span class="w">ミニサイズキノコと好物のリンゴが</span><span class="w">一緒に入った</span><span class="w">メイプル味のクッキー。</span></p>
-          <p class="price">350円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:3">
-        <div class="ph"><img src="image/item-apple.jpg" alt="リンゴのクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>リンゴのクッキー</h3>
-          <p class="desc"><span class="w">キノコ達の大好物の</span><span class="w">リンゴ型のクッキー。</span><span class="w">形はリンゴでもメイプル味。</span></p>
-          <p class="price">300円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:4">
         <div class="ph"><img src="image/item-muffin.jpg" alt="季節のキノコ型マフィン" width="1000" height="667" loading="lazy"></div>
         <div class="tx">
           <h3>季節のキノコ型マフィン</h3>
@@ -1385,7 +1420,7 @@ main .block{overflow:hidden;}
           <p class="price">320円 <small>(税込)</small></p>
         </div>
       </article>
-      <article class="item anim" style="--i:5">
+      <article class="item anim" style="--i:3">
         <div class="ph"><img src="image/item-poundcake.jpg" alt="季節のパウンドケーキ" width="1000" height="667" loading="lazy"></div>
         <div class="tx">
           <h3>季節のパウンドケーキ</h3>
@@ -1393,52 +1428,20 @@ main .block{overflow:hidden;}
           <p class="price">270円 <small>(税込)</small></p>
         </div>
       </article>
-      <article class="item anim" style="--i:6">
-        <div class="ph"><img src="image/item-dragon-scale.jpg" alt="ドラゴンのウロコのクッキー" width="1000" height="1000" loading="lazy"></div>
+      <article class="item anim" style="--i:4">
+        <div class="ph"><img src="image/item-fullmoon.jpg" alt="フルムーン(満月)の紅茶クッキー" width="1000" height="1000" loading="lazy"></div>
         <div class="tx">
-          <h3>ドラゴンのウロコの<br>クッキー</h3>
-          <p class="desc"><span class="w">HALOの物語に登場する</span><span class="w">ドラゴンのウロコのクッキー。</span><span class="w">コーヒー味。</span></p>
-          <p class="price">250円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:7">
-        <div class="ph"><img src="image/item-dragon-egg.jpg" alt="ドラゴンのたまごのクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>ドラゴンのたまごの<br>クッキー</h3>
-          <p class="desc"><span class="w">HALOの物語に登場する</span><span class="w">ドラゴンの卵のクッキー。</span><span class="w">抹茶味。</span></p>
-          <p class="price">250円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:8">
-        <div class="ph"><img src="image/item-fullmoon.jpg" alt="フルムーン(満月)のクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>フルムーン（満月）の<br>クッキー</h3>
-          <p class="desc"><span class="w">HALOの世界のフルムーン(満月)を</span><span class="w">モチーフにした</span><span class="w">紅茶味のクッキー。</span></p>
+          <h3>フルムーン（満月）の<br>紅茶クッキー</h3>
+          <p class="desc"><span class="w">HALOの世界のフルムーン(満月)を</span><span class="w">モチーフにしたクッキー。</span></p>
           <p class="price">360円 <small>(税込)</small></p>
         </div>
       </article>
-      <article class="item anim" style="--i:9">
+      <article class="item anim" style="--i:5">
         <div class="ph"><img src="image/item-wishstar.jpg" alt="みんなの願い星のクッキー" width="1000" height="1000" loading="lazy"></div>
         <div class="tx">
           <h3>みんなの願い星の<br>クッキー</h3>
           <p class="desc"><span class="w">HALOの物語に登場する、</span><span class="w">願い星のクッキー。</span><span class="w">味は色々、願いも色々。</span></p>
           <p class="price">360円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:10">
-        <div class="ph"><img src="image/item-chefhat.jpg" alt="コック帽のキノコのクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>コック帽のキノコの<br>クッキー</h3>
-          <p class="desc"><span class="w">ロゴにも登場する</span><span class="w">コック帽のキノコのクッキー。</span><span class="w">味は当日のお楽しみ。</span></p>
-          <p class="price">270円 <small>(税込)</small></p>
-        </div>
-      </article>
-      <article class="item anim" style="--i:11">
-        <div class="ph"><img src="image/item-collector.jpg" alt="回収屋と回収バッグのクッキー" width="1000" height="1000" loading="lazy"></div>
-        <div class="tx">
-          <h3>回収屋と回収バッグの<br>クッキー</h3>
-          <p class="desc"><span class="w">HALO物の物語に登場する、</span><span class="w">回収屋さんと回収バッグのクッキー。</span></p>
-          <p class="price">400円 <small>(税込)</small></p>
         </div>
       </article>
     </div>
@@ -1560,7 +1563,7 @@ main .block{overflow:hidden;}
       <span class="line">おやつは、ネットショップと</span>
       <span class="line">工房のお店でお求めいただけます。</span>
     </h2>
-    <p class="lead anim" style="--i:1"><span class="w">毎月第1・3 水曜日・土曜日 13:00〜17:00｜</span><span class="w">愛知県安城市横山町石ナ曽根181-3</span></p>
+    <p class="lead anim" style="--i:1"><span class="w">毎月 第1週・第3週の 水曜日・土曜日 13:00〜17:00｜</span><span class="w">愛知県安城市横山町石ナ曽根181-3</span></p>
     <div class="row anim" style="--i:2">
       <a class="btn" href="https://halotales.stores.jp/" target="_blank" rel="noopener">
         <span class="lbl">STORESで買う</span>
@@ -1582,7 +1585,7 @@ main .block{overflow:hidden;}
       <a href="https://www.instagram.com/aceri_no_oyatsu" target="_blank" rel="noopener"><img src="image/icon-sns-02.png" alt="" width="355" height="354" aria-hidden="true">Instagram</a>
       <a href="shop.html#contact">メールでお問い合わせ</a>
     </div>
-    <p class="lead anim" style="--i:4;margin-top:26px"><span class="w">商品購入に関するお問い合わせは、</span><span class="w">Instagramまたは公式LINE</span><span class="w">よりお願いいたします。</span></p>
+    <p class="lead anim" style="--i:4;margin-top:26px"><span class="w">ご購入・クッキー教室・取材のご依頼など、</span><span class="w">お問い合わせは Instagram</span><span class="w">または公式LINEより承ります。</span></p>
   </div>
 </section>
 
@@ -1594,7 +1597,7 @@ main .block{overflow:hidden;}
     <div class="top">
       <div>
         <img class="flogo" src="image/logo.png" alt="アチェリのおやつ" width="800" height="241" loading="lazy">
-        <p class="addr">〒446-0045 愛知県安城市横山町石ナ曽根181-3<br>毎月第1・3 水曜日・土曜日 13:00〜17:00</p>
+        <p class="addr">〒446-0045 愛知県安城市横山町石ナ曽根181-3<br>毎月 第1週・第3週の 水曜日・土曜日 13:00〜17:00</p>
         <div class="fsns">
           <a href="https://www.instagram.com/aceri_no_oyatsu" target="_blank" rel="noopener" aria-label="Instagram"><img src="image/icon-sns-02.png" alt="Instagram" width="355" height="354" loading="lazy"></a>
           <a href="https://lin.ee/QGTHKM1" target="_blank" rel="noopener" aria-label="公式LINE"><img src="image/icon-line.png" alt="公式LINE" width="171" height="171" loading="lazy"></a>
