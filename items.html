@@ -1149,7 +1149,8 @@ main .block{overflow:hidden;}
 .mfobn{display:block;max-width:700px;margin-inline:auto;border-radius:18px;overflow:hidden;
   border:1px solid var(--line);background:var(--pink-1);
   transition:transform .6s var(--ease-out-expo),box-shadow .6s var(--ease-out-expo);}
-.mfobn img{width:100%;height:auto;display:block;}
+.mfobn picture,.mfobn img{display:block;}
+.mfobn img{width:100%;height:auto;}
 .mfobn:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(206,130,121,.16);}
 .mfobn:focus-visible{outline:2px solid var(--pink-5);outline-offset:3px;}
 
@@ -1168,8 +1169,10 @@ main .block{overflow:hidden;}
 
 @media (max-width:1024px){ .points{grid-template-columns:1fr;} }
 @media (max-width:767px){
-  /* バナーは文字が焼き込まれた画像なので、本文幅のままだと画像内の文字が
-     10px相当まで落ちる。セクション幅いっぱいに広げて12px相当を確保する。 */
+  /* スマホは <picture> で縦組み版（852x1217）に切り替わる。横長版だと本文が6〜8px相当で
+     読めなかったため、先方提供の原本からマークと文字ブロックを縦に並べ替えた。
+     キャンバスが細いぶん表示倍率が上がり、375px幅で本文13.6px相当になる。
+     さらにセクション幅いっぱいに広げて、少しでも大きく見せる。 */
   .mfobn{max-width:none;border-radius:0;border-left:0;border-right:0;}
   .mfobn:hover{transform:none;box-shadow:none;}
   .tincard{grid-template-columns:1fr;gap:16px;}
@@ -1368,8 +1371,12 @@ main .block{overflow:hidden;}
   <!-- SPでセクション幅いっぱいに広げるため、バナーだけ .wrap の外に置いている -->
   <div class="mfobn-row anim">
     <a class="mfobn" href="https://maternity-food.org/member-store/aceri-no-oyatsu/" target="_blank" rel="noopener">
-      <img src="image/mfo-banner.jpg" width="1400" height="933" loading="lazy" decoding="async"
-           alt="マタニティフード認定マーク。一般社団法人 日本マタニティフード協会 加盟店。妊娠期・授乳期の方にも召し上がっていただけるよう、協会の認定基準を満たした焼菓子を登録しています。協会の加盟情報ページを見る。">
+      <picture>
+        <!-- スマホは縦組み版（先方提供バナーを並べ替えたもの。文字とマークは拡大していない） -->
+        <source media="(max-width:767px)" srcset="image/mfo-banner-sp.jpg" width="852" height="1217">
+        <img src="image/mfo-banner.jpg" width="1400" height="933" loading="lazy" decoding="async"
+             alt="マタニティフード認定マーク。一般社団法人 日本マタニティフード協会 加盟店。妊娠期・授乳期の方にも召し上がっていただけるよう、協会の認定基準を満たした焼菓子を登録しています。協会の加盟情報ページを見る。">
+      </picture>
     </a>
   </div>
 </section>

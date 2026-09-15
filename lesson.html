@@ -1114,7 +1114,9 @@ main .block{overflow:hidden;}
 .lesson-hero{display:grid;grid-template-columns:1fr minmax(0,.82fr);
   gap:clamp(26px,3.4vw,60px);align-items:center;position:relative;z-index:4;}
 .lesson-hero .ph{border-radius:20px;overflow:hidden;border:1px solid var(--line);}
-.lesson-hero .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+/* 写真 photo-12 は縦長（3:4）。4:3 の枠で中央を切り抜くとエプロンばかりになり、
+   主役の型抜き・スタンプしたクッキーが下で切れる。下寄せにして手元とクッキーを収める。 */
+.lesson-hero .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 85%;}
 
 /* 日程の枠 */
 .sched{position:relative;z-index:4;border:1px dashed var(--pink-4);border-radius:18px;
@@ -1264,7 +1266,7 @@ a.apply:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(206,130,121
         <p class="note mt-s">お店で販売しているキャラクターのクッキーを作る教室ではありません。小さなお子さまでも楽しんでいただける、かんたんな内容です。</p>
       </div>
       <div class="anim" style="--i:1">
-        <figure class="ph"><img src="image/photo-10.jpg" alt="アチェリのおやつの焼菓子" width="1400" height="933" loading="lazy"></figure>
+        <figure class="ph"><img src="image/photo-12.jpg" alt="クッキー教室のようす。型でクッキー生地を抜き、スタンプを押したクッキーが並んでいます" width="1108" height="1477" loading="lazy"></figure>
       </div>
     </div>
   </div>
