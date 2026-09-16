@@ -1133,6 +1133,14 @@ main .block{overflow:hidden;}
   font-size:clamp(15px,1.5vw,20px);letter-spacing:.12em;}
 .route .card .hd .min{margin-left:auto;font-family:var(--font-serif);font-size:13px;
   letter-spacing:.1em;color:var(--pink-5);white-space:nowrap;}
+/* 工房前の写真。文字だけでは「工房前に停める」がどんな場所か伝わらないため、
+   カードの隣に実景を置く。1024px 以下は縦に積む。 */
+.route.with-ph{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:start;}
+.route-ph{margin:0;}
+.route-ph img{display:block;width:100%;height:auto;
+  border-radius:18px;border:1px solid var(--line);}
+.route-ph figcaption{margin-top:10px;font-size:12.5px;letter-spacing:.08em;
+  line-height:1.9;color:var(--text-sub);}
 
 /* ---- そのほかのお取扱い ---- */
 .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,34px);
@@ -1168,7 +1176,7 @@ main .block{overflow:hidden;}
 .sh-c3{width:clamp(54px,6.4vw,110px);right:3%;bottom:12%;--fo:.5;}
 .sh-kino{width:clamp(56px,6.6vw,112px);left:2%;bottom:10%;--fo:.9;}
 
-@media (max-width:1024px){ .ways{grid-template-columns:1fr;} }
+@media (max-width:1024px){ .ways,.route.with-ph{grid-template-columns:1fr;} }
 @media (max-width:767px){
   .sh-c1,.sh-drop1,.sh-drop2,.sh-c3{display:none;}
   .sh-drgn{width:70px;left:-1%;bottom:1%;}
@@ -1418,7 +1426,7 @@ main .block{overflow:hidden;}
       </div>
     </div>
 
-    <div class="route">
+    <div class="route with-ph">
       <!-- ★ 「公園からお越しの方へ」は、隣の公園が開園するまで非表示（2026-09-10 先方指定）。
            開園したらこのコメントを外して復活させる。文中の [要記入] は開園後に埋める。
       <div class="card anim" style="--i:0">
@@ -1446,6 +1454,11 @@ main .block{overflow:hidden;}
         </dl>
         <p class="note mt-s">カーナビをご利用の場合は「愛知県安城市横山町石ナ曽根181-3」でご検索ください。</p>
       </div>
+
+      <figure class="route-ph anim" style="--i:1">
+        <img src="image/parking.jpg" alt="工房前のようす。砂利敷きのスペースの奥に、屋根のついた入口と「アチェリのおやつ」の看板、OPENと書かれた黒板が見えます" width="1400" height="788" loading="lazy" decoding="async">
+        <figcaption>工房前のようす</figcaption>
+      </figure>
     </div>
   </div>
 </section>
