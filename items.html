@@ -1167,6 +1167,22 @@ main .block{overflow:hidden;}
 .it-hand{width:clamp(60px,7.4vw,128px);right:2%;top:8%;--fo:.9;}
 
 @media (max-width:1024px){ .points{grid-template-columns:1fr;} }
+/* ---- メディア掲載 ---- */
+.mediafig{position:relative;z-index:4;display:grid;
+  grid-template-columns:minmax(0,.58fr) minmax(0,1fr);
+  gap:clamp(16px,2.2vw,34px);align-items:start;
+  /* 桁いっぱいに広げると誌面が685pxになり、ページの主役（焼菓子）より目立ってしまう。
+     周囲のセクションと同じ落ち着きに収まる幅で止める。 */
+  max-width:940px;margin-inline:auto;}
+.mediafig figure{margin:0;}
+.mediafig img{display:block;width:100%;height:auto;border-radius:16px;
+  border:1px solid var(--line);box-shadow:0 12px 32px rgba(206,130,121,.12);}
+.mediatxt{position:relative;z-index:4;margin-top:clamp(18px,2.2vw,30px);text-align:center;}
+.mediatxt .mt-name{font-family:var(--font-serif);font-size:clamp(14px,1.5vw,18px);
+  letter-spacing:.1em;line-height:1.9;color:var(--text);}
+.mediatxt .note{margin-top:4px;}
+.mediatxt .prose{max-width:36em;margin-top:12px;margin-inline:auto;}
+
 @media (max-width:767px){
   /* スマホは <picture> で縦組み版（852x1217）に切り替わる。横長版だと本文が6〜8px相当で
      読めなかったため、先方提供の原本からマークと文字ブロックを縦に並べ替えた。
@@ -1181,6 +1197,10 @@ main .block{overflow:hidden;}
   .it-c3{width:56px;left:-1%;bottom:8%;}
   .it-kino{width:52px;left:-1%;top:9%;}
   .it-c2,.it-bear,.it-drop1,.it-drop2,.it-bear2,.it-drop3,.it-hand{display:none;}
+  /* 誌面は横に並べると1枚が150px程度まで痩せるので、縦に積んで大きく見せる。
+     表紙は縦長なので幅を絞り、誌面（正方形）を主役にする。 */
+  .mediafig{grid-template-columns:1fr;gap:18px;max-width:420px;margin-inline:auto;}
+  .mediafig .mf-cover{max-width:62%;margin-inline:auto;}
 }
 </style>
 
@@ -1454,13 +1474,35 @@ main .block{overflow:hidden;}
   </div>
 </section>
 
-<!-- ===== パララックス写真帯 ===== -->
-<div class="px-photo">
-  <img src="image/bg-02.jpg" alt="淡いピンクの器に並んだアチェリのおやつのクッキー" width="1600" height="1067" loading="lazy">
-  <div class="cap">
-    <p><span class="line">季節がめぐるたびに、</span><span class="line">物語のつづきを焼いています。</span></p>
+<!-- ============================================================
+     メディア掲載
+     もとはパララックス写真帯だったが、2026-09-23 先方指定で誌面の紹介に差し替え。
+     誌面は雑誌側の著作物のため、Web掲載の許諾ありと先方確認済み（lp-requirements 参照）。
+     ============================================================ -->
+<section class="block bg-a" id="media" aria-labelledby="media-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en anim" style="--i:0">Media</span>
+      <h2 class="anim" style="--i:1" id="media-h">メディア掲載</h2>
+      <p class="lead anim" style="--i:2">雑誌で取り上げていただきました。</p>
+    </div>
+
+    <div class="mediafig anim" style="--i:0">
+      <figure class="mf-cover">
+        <img src="image/media-tennen-cover.jpg" alt="雑誌「天然生活」2026年11月号の表紙" width="840" height="1183" loading="lazy" decoding="async">
+      </figure>
+      <figure class="mf-page">
+        <img src="image/media-tennen-page.jpg" alt="「天然生活」2026年11月号の誌面。アチェリのおやつが紹介されたページ" width="1000" height="1000" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="mediatxt anim" style="--i:1">
+      <p class="mt-name">「天然生活」2026年11月号</p>
+      <p class="note">2026年9月18日発売</p>
+      <p class="prose">「物語の世界をお菓子で楽しむ　童話から生まれた焼き菓子」として、<span class="w">アチェリのおやつをご紹介いただきました。</span></p>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- ============================================================
      限定クッキー缶
